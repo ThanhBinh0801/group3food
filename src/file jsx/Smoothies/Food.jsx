@@ -15,5 +15,5 @@ function Food(props) {
       <br />
     </>
   );
-}
+}   
 export default Food;

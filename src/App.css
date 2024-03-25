@@ -205,4 +205,25 @@ img {
 .footerlink a {
   text-decoration: none;
 }
+.inputsearch{
+  border-radius: 8px;
+  width: 90%;
+  height: 50px;
+
+  border: none;
+  outline: none;
+  border-color: transparent;
+}
+.formsearch-border{
+  border: 1px solid #000000; 
+  border-radius: 5px;
+  padding: 5px;
+  width: 20%;
+  margin: 0 auto;
+  
+}
+.clicked:hover {
+  background-color: #f0f0f0;
+}
 /* B edit 172 toi 202 */
+

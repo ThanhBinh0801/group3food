@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 import { TiHome } from "react-icons/ti";
 function Footer() {
   return (
-    <div className="container-fluid px-0">
+    <div className="container-fluid px-0 mt-md-5">
       <footer
         className="text-center text-lg-start text-dark"
         style={{ backgroundColor: "#ECEFF1" }}
       >
         <section
           className="d-flex justify-content-between text-white"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+          style={{ backgroundColor: "#F2DCB4" }}
         >
           <div className="me-5 footerlink text-center">
             <Link to="/">
@@ -118,9 +118,9 @@ function Footer() {
         </section>
         <div
           className="text-center p-3"
-          style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+          style={{ backgroundColor: "#F2DCB4" }}
         >
-          © 2020 Copyright:{" "}
+          © 2024 Copyright by Group3FPT{" "}
         </div>
       </footer>
     </div>

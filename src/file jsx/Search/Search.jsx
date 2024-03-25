@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Col, Button, Row, Container, Card, Form } from "react-bootstrap";
 import Search from "./List";
+import { FaSearch } from 'react-icons/fa';
 
 function SearchButton() {
   const [searchText, setSearchText] = useState("");
@@ -8,6 +8,7 @@ function SearchButton() {
   const [searchResult, setSearchResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [noResult, setNoResult] = useState(false);
+  const [clicked, setClicked] = useState(false);
 
   useEffect(() => {
     // Fetch all data when component mounts
@@ -110,63 +111,39 @@ function SearchButton() {
   return (
     <div onClick={handleSearch}>
       <header>
-        <Container className="container">
-          <Row className="vh-70 d-flex justify-content-center align-items-center ">
-            <Col md={8} lg={6} xs={12}>
-              <div className="border border-3 border-primary"></div>
-              <Card>
-                <Card.Body className="custom-card-body">
-                  <div className="mt-md-4">
-                    <h2 className="fw-bold text-uppercase ">
-                      What do you want to search ?
-                    </h2>
-                    <div className="">
-                      <Form onSubmit={handleSearch}>
-                        <Form.Group className="" controlId="formBasicPassword">
-                          <Form.Label>Your Search</Form.Label>
-                          <Form.Control
-                            type="Text"
-                            value={searchText}
-                            placeholder="..."
-                            onChange={handleInputChange}
-                            onKeyDown={handleKeyDown}
-                            autoFocus
-                          />
-                        </Form.Group>
-                        <div className="d-grid">
-                          <Button onClick={handleSearch} disabled={isLoading}>
-                            {isLoading ? "Loading..." : "Search"}
-                          </Button>
-                        </div>
-                      </Form>
-                    </div>
-                  </div>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-        {noResult ? (
-          <h2>No result</h2>
-        ) : (
-          searchResult && (
-            <div>
-              <h2>Result:</h2>
-              <ul>
-                {searchResult.map((result, index) => (
-                  <div key={index}>
-                    <Search
-                      Image={result.Image}
-                      Name={result.Name}
-                      Price={result.Price}
-                    />
-                  </div>
-                ))}
-              </ul>
-            </div>
-          )
-        )}
-      </header>
+          <form onSubmit={handleSearch} className="formsearch-border">
+            <input
+              type="Text"
+              value={searchText}
+              placeholder="..."
+              onChange={handleInputChange}
+              onKeyDown={handleKeyDown}
+              className="inputsearch border-0"
+            /><span onClick={handleSearch} className={clicked ? "clicked" : ""}><FaSearch/></span>
+          </form>
+    </header>
+        <section>
+        <div className="row row-cols-1 row-cols-md-4 g-4">
+          {searchResult && searchResult.length > 0 ? (
+            searchResult.map((result, index) => (
+              <div key={index} className="col">
+                <Search
+                  Image={result.Image}
+                  Name={result.Name}
+                  Price={result.Price}
+                  id={result.id}
+                />
+              </div>
+              
+            ))
+          ) : noResult ? (
+            <div className="col">No result</div>
+          ) : (
+            null
+          )}
+        </div>
+        </section>
+      
     </div>
   );
 }
