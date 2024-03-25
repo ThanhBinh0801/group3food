@@ -68,24 +68,25 @@
   justify-content: space-around;
   align-items: center;
   height: max-content;
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(246, 217, 153, 0.568);
   border-bottom: 2px solid #ffffff;
   margin-bottom: 50px;
 }
 .header {
   height: max-content;
-  background-color: #ffa500;
+  background-color: rgb(246, 217, 153);
   font-family: sans-serif;
   height: 13%;
 }
-.siteFooter{
-  height:fit-content; 
+.siteFooter {
+  height: fit-content;
   width: 100% !important;
   margin: 0 !important;
+  margin-top: 50px;
 }
 .navheader > * {
   text-decoration: none;
-  color: black;
+  color: white;
 }
 .card-search {
   background-color: rgb(246, 231, 182);
@@ -132,6 +133,7 @@
 }
 .FoodShopmenu {
   font-size: 60px;
+  font-family: cursive;
 }
 .detail {
   display: flex;
@@ -149,20 +151,32 @@ img {
   border-radius: 20px;
   filter: drop-shadow(0 0 10px #e0c581);
 }
+.tenvagiasanpham {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
 .tenthanhphan {
   font-size: 20px;
-  font-weight: 400;
-  border-radius: 10px;
-  background-color: #feab0d;
-  width: 66%;
-}
-.tenthanhphan1 {
-  font-size: 20px;
-  font-weight: 400;
+  font-weight: 200;
   border-radius: 10px;
   background-color: #feab0d;
   width: 70%;
-  margin-left: 30px;
+}
+.tenthanhphan1 {
+  font-size: 20px;
+  font-weight: 200;
+  border-radius: 10px;
+  background-color: #feab0d;
+  width: 60%;
+  margin-left: 90px;
+}
+.giasanpham {
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 10px;
+  background-color: #feab0d;
 }
 .cacsanphamchinh {
   width: fit-content;
@@ -209,3 +223,49 @@ img {
   text-decoration: none;
 }
 /* B edit 172 toi 202 */
+.carousel-item {
+  transition: transform 0.5s ease; /* Thời gian và kiểu chuyển động */
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+  transform: translateX(0); /* Dịch chuyển slide */
+}
+.maufooter {
+  background-color: rgb(246, 217, 153);
+}
+.smooth {
+  transition: all 0.3s ease 0s;
+}
+.smooth:hover {
+  transform: translateY(-5px);
+}
+.text-focus-in {
+  -webkit-animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(1px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(1px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
+  }
+}

@@ -42,22 +42,27 @@ function Smooth() {
       <section className="container">
         <td /> <br />
         <img src="./imgSmoothies/anhSmoothies.png" alt="" />
-        <div className="col anhbensmoothies">
-          {chunkArray(smoothies, 2).map((pair, index) => (
-            <div className="row  dichuyenanhsanpham" key={index}>
-              {pair.map((smoothie, innerIndex) => (
-                <div className="col" key={innerIndex}>
-                  <Food
-                    img={smoothie.img}
-                    Name={smoothie.Name}
-                    id={smoothie.id}
-                    key={innerIndex}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
+
+          <div className="col anhbensmoothies">
+            {chunkArray(smoothies, 2).map((pair, index) => (
+              <div className="row  dichuyenanhsanpham" key={index}>
+                {pair.map((smoothie, innerIndex) => 
+                (
+                  <div className="col" key={innerIndex}>
+                    <Food
+                      img={smoothie.img}
+                      img1={smoothie.img1}
+                      img2={smoothie.img2}
+                      Name={smoothie.Name}
+                      id={smoothie.id}
+                      key={innerIndex}
+                      price={smoothie.price}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
       </section>
     </div>
   );
