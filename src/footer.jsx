@@ -11,7 +11,7 @@ function Footer() {
           className="d-flex justify-content-between text-white"
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
         >
-          <div className="me-5 footerlink">
+          <div className="me-5 footerlink text-center">
             <Link to="/">
               <TiHome fontSize={30} />
             </Link>

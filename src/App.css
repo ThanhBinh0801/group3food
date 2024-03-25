@@ -1,7 +1,7 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  background-color: rgb(246, 217, 153);
+  /* background-color: rgb(246, 217, 153); */
 }
 
 .map {
@@ -120,7 +120,7 @@
 }
 .homepage {
   text-align: center;
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 .FoodShopmenu {
   font-size: 60px;
@@ -169,29 +169,28 @@ img {
   justify-content: center;
   margin-left: 197px;
 }
-.thongtin{
+.thongtin {
   text-align: left;
   font-size: x-large;
   font-family: Helvetica Neue;
-
 }
-.price1{
+.price1 {
   width: max-content;
   padding: 5px 10px;
   font-size: 30px;
   font-weight: 600;
   border: none;
   border-radius: 10px;
-  background-color: #FAFAFA;
-  color: #EE4D2D;
+  background-color: #fafafa;
+  color: #ee4d2d;
   transition: 0.3s;
   box-shadow: #727171;
 }
-.buttonchitiet button{
+.buttonchitiet button {
   border-radius: 12px;
   margin-top: 12px;
   margin-right: 12px;
-  border: 1px solid #EE4D2D;
+  border: 1px solid #ee4d2d;
   box-shadow: 2px 2px 5px rgb(63, 2, 2);
 }
 .buttonchitiet button:active {
