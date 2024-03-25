@@ -2,6 +2,7 @@
   font-family: sans-serif;
   text-align: center;
   /* background-color: rgb(246, 217, 153); */
+  height: 100vh;
 }
 
 .map {
@@ -74,6 +75,12 @@
   height: max-content;
   background-color: #ffa500;
   font-family: sans-serif;
+  height: 13%;
+}
+.siteFooter{
+  height:fit-content; 
+  width: 100% !important;
+  margin: 0 !important;
 }
 .navheader > * {
   text-decoration: none;
