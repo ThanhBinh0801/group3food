@@ -8,7 +8,7 @@ function Chitiet(props) {
                 <div>{props.Name}</div>
                 <div className="price1">{props.price}</div> 
                 <div className="buttonchitiet">
-                    <button>Add to card</button>
+                    <button>Add to cart</button>
                     <button>Buy</button>
                 </div>
             </div>

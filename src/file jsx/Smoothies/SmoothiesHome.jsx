@@ -1,6 +1,7 @@
 import Food from "./Food";
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+
 function Smooth() {
   const [smoothies, setSmoothies] = useState([]);
 
@@ -45,7 +46,7 @@ function Smooth() {
           {chunkArray(smoothies, 2).map((pair, index) => (
             <div className="row  dichuyenanhsanpham" key={index}>
               {pair.map((smoothie, innerIndex) => (
-                <div className="col">
+                <div className="col" key={innerIndex}>
                   <Food
                     img={smoothie.img}
                     Name={smoothie.Name}
