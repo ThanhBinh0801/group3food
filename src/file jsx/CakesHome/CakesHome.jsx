@@ -52,8 +52,9 @@ function Cakes() {
                     price={smoothie.price}
                     img1={smoothie.img1}
                     img2={smoothie.img2}
+                    id = {smoothie.id}
                   />
-                  <Food Name={smoothie.Name} img={smoothie.img} id={smoothie.id} />
+                  
                 </div>
               ))}
             </div>
