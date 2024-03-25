@@ -1,38 +1,202 @@
 .App {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: rgb(246, 217, 153);
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+}
+.headercontact {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.shopnamecontact {
+  font-size: xx-large;
+  font-weight: bolder;
+}
+.popup {
+  display: flex;
+  justify-content: center;
+}
+.namepricesearch {
+  display: flex;
+}
+.searchresult {
+  text-align: center;
+}
+.hinh {
+  width: 300px;
+  height: 210px;
+  margin: 18px 0;
+  border-radius: 10px;
+  transition: 0.3s;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.name {
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background-color: #feab0d;
+  color: #ffffff;
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px #333333;
+  border-left: 1.5px solid #ffffff;
+  border-top: 1.5px solid #ffffff;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.price {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background-color: #feab0d;
+  color: #ffffff;
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px #333333;
+  border-left: 1.5px solid #ffffff;
+  border-top: 1.5px solid #ffffff;
+}
+.navheader {
+  font-size: xx-large;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: max-content;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom: 2px solid #ffffff;
+  margin-bottom: 50px;
+}
+.header {
+  height: max-content;
+  background-color: #ffa500;
+  font-family: sans-serif;
+}
+.navheader > * {
+  text-decoration: none;
+  color: black;
+}
+.card-search {
+  background-color: rgb(246, 231, 182);
+}
+.custom-card-body {
+  background-color: rgb(255, 235, 204, 0.7) !important;
+}
+.DropHealthy {
+  padding-left: 10px;
+  text-decoration: none;
+}
+.view {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background-color: #feab0d;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 2px 2px 5px #333333;
+  border-left: 1.5px solid #ffffff;
+  border-top: 1.5px solid #ffffff;
+}
+.view:hover {
+  background-color: #d28a04;
+}
+.view:active {
+  box-shadow: inset 2px 2px 5px #333333;
+}
+.product {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  float: none;
+}
+.homepage {
+  text-align: center;
+  background-color: bisque;
+}
+.FoodShopmenu {
+  font-size: 60px;
+}
+.detail {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.marginautu {
+  margin: auto;
+  display: flex;
+}
+.marginautu > * {
+  margin: 0 70px;
+}
+img {
+  border-radius: 20px;
+  filter: drop-shadow(0 0 10px #e0c581);
+}
+.tenthanhphan {
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 10px;
+  background-color: #feab0d;
+  width: 66%;
+}
+.tenthanhphan1 {
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 10px;
+  background-color: #feab0d;
+  width: 70%;
+  margin-left: 30px;
+}
+.cacsanphamchinh {
+  width: fit-content;
+  margin: 10px 77px;
+}
+.dichuyenanhsanpham > :nth-child(odd) {
+  display: flex;
+  justify-content: end;
+}
+.imgcareal {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: 197px;
 }
+.thongtin{
+  text-align: left;
+  font-size: x-large;
+  font-family: Helvetica Neue;
 
-.App-link {
-  color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.price1{
+  width: max-content;
+  padding: 5px 10px;
+  font-size: 30px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background-color: #FAFAFA;
+  color: #EE4D2D;
+  transition: 0.3s;
+  box-shadow: #727171;
+}
+.buttonchitiet button{
+  border-radius: 12px;
+  margin-top: 12px;
+  margin-right: 12px;
+  border: 1px solid #EE4D2D;
+  box-shadow: 2px 2px 5px rgb(63, 2, 2);
+}
+.buttonchitiet button:active {
+  background-color: #b1acac;
+}
+.footerlink a {
+  text-decoration: none;
 }
