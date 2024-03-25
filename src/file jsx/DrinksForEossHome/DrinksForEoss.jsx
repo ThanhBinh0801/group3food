@@ -46,7 +46,7 @@ function DrinksForEoss() {
             <div className="row dichuyenanhsanpham" key={index}>
               {pair.map((smoothie, innerIndex) => (
                 <div className="col" key={innerIndex}>
-                  <Food Name={smoothie.Name} img={smoothie.img} />
+                  <Food Name={smoothie.Name} img={smoothie.img} id={smoothie.id} />
                 </div>
               ))}
             </div>

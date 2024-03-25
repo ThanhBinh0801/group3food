@@ -16,6 +16,11 @@ import Detail from "./file jsx/Smoothies/Sinhtobo";
 import DrinksForEoss from "./file jsx/DrinksForEossHome/DrinksForEoss";
 import Footer from "./footer";
 import DetailCake from "./file jsx/CakesHome/Sinhtobo";
+import DetailYogurt from "./file jsx/YogurtHome/Sinhtobo";
+import DetailFood from "./file jsx/FoodForEoss/Sinhtobo";
+import DetailCereal from "./file jsx/CerealHome/Sinhtobo";
+import DetailDrinks from "./file jsx/DrinksForEossHome/Sinhtobo";
+import DetailSearch from "./file jsx/Search/Sinhtobo";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
@@ -62,6 +67,7 @@ function App() {
       <section className="siteSection">
         <Routes>
           <Route path="/SearchButton" element={<SearchButton />} />
+          <Route path="/DetailSearch/:Name" element={<DetailSearch />} />
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route
@@ -73,11 +79,15 @@ function App() {
           <Route path="/Smooth" element={<Smooth />} />
           <Route path="/Smooth/:id" element={<Detail />} />
           <Route path="/FoodForEoss" element={<FoodForEoss />} />
+          <Route path="/FoodForEoss/:id" element={<DetailFood />} />
           <Route path="/Cereal" element={<Cereal />} />
+          <Route path="/Cereal/:id" element={<DetailCereal />} />
           <Route path="/Cakes" element={<Cakes />} />
           <Route path="/Cakes/:id" element={<DetailCake />} />
           <Route path="/Yogurt" element={<Yogurt />} />
+          <Route path="/Yogurt/:id" element={<DetailYogurt />} />
           <Route path="/DrinksForEoss" element={<DrinksForEoss />} />
+          <Route path="/DrinksForEoss/:id" element={<DetailDrinks />} />
         </Routes>
       </section>
       <footer>

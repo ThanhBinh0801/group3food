@@ -1,13 +1,11 @@
 import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import Chitiet from "./Chitiet";
-
-function DetailSearch() {
-  const { Name } = useParams(); // Sử dụng name thay vì id
-  const [smoothie, setSmoothie] = useState({});
-
+function DetailFood() {
+  const { id } = useParams();
+  const [smoothie, setsmoothie] = useState({});
   const getSanphams = () => {
-    fetch(`https://6601998687c91a11641b3aa6.mockapi.io/SearchDetail?Name=${Name}`, { // Truy vấn dựa trên Name thay vì id
+    fetch(`https://65f2fa59105614e6549f75dd.mockapi.io/FoodForEoss/${id}`, {
       method: "GET",
       headers: { "content-type": "application/json" },
     })
@@ -19,22 +17,20 @@ function DetailSearch() {
       })
       .then((sp) => {
         //console.log("Student List: " + studentList);
-        setSmoothie(sp[0]); // Lấy phần tử đầu tiên của mảng kết quả
+        setsmoothie(sp);
       })
       .catch((error) => {
         console.log("Error: " + error);
       });
   };
-
   useEffect(() => {
     getSanphams();
   }, []);
-
+  // console.log(sanpham);
   return (
     <div>
-      <Chitiet Name={smoothie.Name} Image={smoothie.Image} Price={smoothie.Price} />
+      <Chitiet Name={smoothie.Name} img={smoothie.img} price={smoothie.price}/>
     </div>
   );
 }
-
-export default DetailSearch;
+export default DetailFood;

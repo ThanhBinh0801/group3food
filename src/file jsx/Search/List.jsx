@@ -1,8 +1,8 @@
-import {Link} from "react-router-dom"
-function Search({ Name, Price, Image,id }) {
+import { useNavigate } from "react-router-dom";
+function Search({ Name, Price, Image }) {
+  const navigate = useNavigate();
   return (
     <div className="product">
-      <Link to={`/product/${id}`} >
       <div className="hinh">
       <img src={Image} alt="Son"  />
       </div>
@@ -13,9 +13,8 @@ function Search({ Name, Price, Image,id }) {
         <div className="price">
         Price: {Price}
         </div>
-        <button className="view">Detail</button>
+        <button className="view" onClick={() => navigate(`/DetailSearch/${Name}`)}>Detail</button>
       </p>
-      </Link>
      
     </div>
   );
