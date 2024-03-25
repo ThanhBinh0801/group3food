@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { TiHome } from "react-icons/ti";
 function Footer() {
   return (
-    <div className="container my-5">
+    <div className="container-fluid px-0">
       <footer
         className="text-center text-lg-start text-dark"
         style={{ backgroundColor: "#ECEFF1" }}
@@ -18,9 +18,9 @@ function Footer() {
           </div>
         </section>
         <section className="">
-          <div className="container text-center text-md-start mt-5">
+          <div className="container text-center text-md-start">
             <div className="row mt-3">
-              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <div className="col-md-3 col-lg-4 col-xl-3 mx-auto ">
                 <h6 className="text-uppercase fw-bold">Food Shop</h6>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"
@@ -40,8 +40,8 @@ function Footer() {
                   Experience the joy of snacking at Group3 Snack Shop today!
                 </p>
               </div>
-              <div className="col-md-5 col-lg-4 col-xl-4 mx-auto mb-8">
-                <h6 className="text-uppercase fw-bold text-center mb-2 ">
+              <div className="col-md-5 col-lg-4 col-xl-4 mx-auto ">
+                <h6 className="text-uppercase fw-bold text-center  ">
                   Products
                 </h6>
                 <hr
@@ -89,7 +89,7 @@ function Footer() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0">
                 <h6 className="text-uppercase fw-bold">Contact</h6>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"

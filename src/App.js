@@ -15,6 +15,7 @@ import Yogurt from "./file jsx/YogurtHome/YogurtHome";
 import Detail from "./file jsx/Smoothies/Sinhtobo";
 import DrinksForEoss from "./file jsx/DrinksForEossHome/DrinksForEoss";
 import { TiHome } from "react-icons/ti";
+import Footer from "./footer";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
@@ -178,6 +179,7 @@ function App() {
             </div>
           </footer>
         </div>
+        <Footer />
       </footer>
     </div>
   );

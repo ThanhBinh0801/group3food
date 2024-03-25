@@ -1,6 +1,7 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  height: max-content;
   /* background-color: rgb(246, 217, 153); */
   height: 100vh;
 }
@@ -176,6 +177,7 @@ img {
   justify-content: center;
   margin-left: 197px;
 }
+/* B edit 172 detail san pham */
 .thongtin {
   text-align: left;
   font-size: x-large;
@@ -206,3 +208,4 @@ img {
 .footerlink a {
   text-decoration: none;
 }
+/* B edit 172 toi 202 */
