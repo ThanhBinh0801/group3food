@@ -5,11 +5,11 @@ function Footer() {
     <div className="container-fluid px-0 mt-md-5">
       <footer
         className="text-center text-lg-start text-dark"
-        style={{ backgroundColor: "#ECEFF1" }}
+        style={{ backgroundColor: "#ffa343" }}
       >
         <section
           className="d-flex justify-content-between text-white"
-          style={{ backgroundColor: "#F2DCB4" }}
+          style={{ backgroundColor: "#ff7e00" }} 
         >
           <div className="me-5 footerlink text-center">
             <Link to="/">
@@ -118,7 +118,7 @@ function Footer() {
         </section>
         <div
           className="text-center p-3"
-          style={{ backgroundColor: "#F2DCB4" }}
+          style={{ backgroundColor: "#ff7e00" }}
         >
           © 2024 Copyright by Group3FPT{" "}
         </div>
