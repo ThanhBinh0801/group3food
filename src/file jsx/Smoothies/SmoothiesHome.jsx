@@ -39,10 +39,8 @@ function Smooth() {
 
   return (
     <div>
-      <section className="container">
-        <td /> <br />
+      <section className="container ">
         <img src="./imgSmoothies/anhSmoothies.png" alt="" />
-
           <div className="col anhbensmoothies">
             {chunkArray(smoothies, 2).map((pair, index) => (
               <div className="row  dichuyenanhsanpham" key={index}>

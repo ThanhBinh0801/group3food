@@ -3,11 +3,17 @@ import { TiHome } from "react-icons/ti";
 
 function Footer() {
   return (
-    <div className="container-fluid px-0 ">
-      <footer className="text-center text-lg-start text-dark bg-light ">
-        <section className="d-flex justify-content-between text-white maufooter p-3 ">
-          <div className="me-5 footerlink text-center ">
-            <Link to="/" className="text-dark ">
+    <div className="container-fluid px-0 mt-md-5">
+      <footer
+        className="text-center text-lg-start text-dark"
+        style={{ backgroundColor: "#ECEFF1" }}
+      >
+        <section
+          className="d-flex justify-content-between text-white"
+          style={{ backgroundColor: "#F2DCB4" }}
+        >
+          <div className="me-5 footerlink text-center">
+            <Link to="/">
               <TiHome fontSize={30} />
             </Link>
           </div>
@@ -95,8 +101,11 @@ function Footer() {
             </div>
           </div>
         </section>
-        <div className="text-center p-3 maufooter text-dark">
-          © 2020 Group3 Food Shop. All rights reserved.
+
+        <div
+          className="text-center p-3"
+          style={{ backgroundColor: "#F2DCB4" }}
+        >
         </div>
       </footer>
     </div>

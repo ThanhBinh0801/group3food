@@ -31,6 +31,7 @@ function Food(props) {
         <div className="tenthanhphan">{props.Name}</div>
         <div className="giasanpham">{props.price}</div>
       </div>
+      <br />
     </div>
   );
 }

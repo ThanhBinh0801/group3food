@@ -34,5 +34,4 @@ function Food(props) {
     </div>
   );
 }
-
 export default Food;
