@@ -11,10 +11,8 @@ function Search({ Name, Price, Image }) {
         <div className="price">
          Price: {Price}
         </div>
-      <button className="view">Detail</button>
+      <button className="view" >Detail</button>
       </p>
-      
-      
     </div>
   );
 }

@@ -64,22 +64,19 @@
 }
 .navheader {
   font-size: xx-large;
-  display: flex;
-  justify-content: space-around;
   align-items: center;
   height: max-content;
   background-color: rgba(255, 255, 255, 0.7);
   border-bottom: 2px solid #ffffff;
-  margin-bottom: 50px;
 }
 .header {
   height: max-content;
-  background-color: #ffa500;
   font-family: sans-serif;
-  height: 13%;
+  height: max-content;
+  background-color: #d28a04;
 }
-.siteFooter{
-  height:fit-content; 
+.siteFooter {
+  height: fit-content;
   width: 100% !important;
   margin: 0 !important;
 }

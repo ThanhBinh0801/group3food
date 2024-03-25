@@ -45,7 +45,9 @@ function SearchButton() {
         !yogurtResponse.ok ||
         !smoothieResponse.ok
       ) {
-        throw new Error("An error occurred while retrieving data from the API.");
+        throw new Error(
+          "An error occurred while retrieving data from the API."
+        );
       }
 
       const foodData = await foodResponse.json();
@@ -114,16 +116,13 @@ function SearchButton() {
               <div className="border border-3 border-primary"></div>
               <Card>
                 <Card.Body className="custom-card-body">
-                  <div className="mb-3 mt-md-4">
-                    <h2 className="fw-bold mb-2 text-uppercase ">
+                  <div className="mt-md-4">
+                    <h2 className="fw-bold text-uppercase ">
                       What do you want to search ?
                     </h2>
-                    <div className="mb-3">
+                    <div className="">
                       <Form onSubmit={handleSearch}>
-                        <Form.Group
-                          className="mb-3"
-                          controlId="formBasicPassword"
-                        >
+                        <Form.Group className="" controlId="formBasicPassword">
                           <Form.Label>Your Search</Form.Label>
                           <Form.Control
                             type="Text"
@@ -136,7 +135,7 @@ function SearchButton() {
                         </Form.Group>
                         <div className="d-grid">
                           <Button onClick={handleSearch} disabled={isLoading}>
-                            {isLoading ? 'Loading...' : 'Search'}
+                            {isLoading ? "Loading..." : "Search"}
                           </Button>
                         </div>
                       </Form>
@@ -168,9 +167,6 @@ function SearchButton() {
           )
         )}
       </header>
-      <section>
-      </section>
-      <footer></footer>
     </div>
   );
 }

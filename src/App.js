@@ -16,23 +16,48 @@ import Detail from "./file jsx/Smoothies/Sinhtobo";
 import DrinksForEoss from "./file jsx/DrinksForEossHome/DrinksForEoss";
 import { TiHome } from "react-icons/ti";
 import Footer from "./footer";
+import DetailCake from "./file jsx/CakesHome/Sinhtobo";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
     <div className="App">
       <header className="header">
         <nav className="navheader">
-          <Menu />
-          <Link to="/SearchButton">Search</Link>
-          <Link to="/" className="FoodShopmenu">
-            Food Shop
-          </Link>
-          <Link to="/contact">Contact</Link>
-          {loggedInUser ? ( // Check if user is logged in
-            <Link to="/profile">{loggedInUser.Name}</Link> // Display user's name as link
-          ) : (
-            <Link to="/login">Login</Link>
-          )}
+          <div className="row align-items-center ">
+            <div className="col d-flex justify-content-center ">
+              <Menu />
+            </div>
+            <div className="col">
+              <Link to="/SearchButton" className="nav-link">
+                Search
+              </Link>
+            </div>
+            <div className="col">
+              <Link
+                to="/"
+                className="nav-link FoodShopmenu fw-bold"
+                style={{ fontSize: "65px" }}
+              >
+                Food Shop
+              </Link>
+            </div>
+            <div className="col">
+              <Link to="/contact" className="nav-link">
+                Contact
+              </Link>
+            </div>
+            <div className="col ">
+              {loggedInUser ? (
+                <Link to="/profile" className="nav-link">
+                  {loggedInUser.Name}
+                </Link>
+              ) : (
+                <Link to="/login" className="nav-link">
+                  Login
+                </Link>
+              )}
+            </div>
+          </div>
         </nav>
       </header>
       <section className="siteSection">
@@ -51,6 +76,7 @@ function App() {
           <Route path="/FoodForEoss" element={<FoodForEoss />} />
           <Route path="/Cereal" element={<Cereal />} />
           <Route path="/Cakes" element={<Cakes />} />
+          <Route path="/Cakes/:id" element={<DetailCake />} />
           <Route path="/Yogurt" element={<Yogurt />} />
           <Route path="/DrinksForEoss" element={<DrinksForEoss />} />
         </Routes>

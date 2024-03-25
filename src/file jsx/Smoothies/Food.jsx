@@ -5,7 +5,7 @@ function Food(props) {
     <>
       <div
         className="cacsanphamchinh"
-        onClick={() => navigate(`/smooth/${props.id}`)}
+        onClick={() => navigate(`/Smooth/${props.id}`)}
       >
         <div>
           <img src={props.img} alt="Hinh Dai dien" />
