@@ -226,4 +226,10 @@ img {
   background-color: #f0f0f0;
 }
 /* B edit 172 toi 202 */
+.smooth {
+  transition: all 0.3s ease 0s;
+}
+.smooth:hover {
+  transform: translateY(-5px);
+}
 

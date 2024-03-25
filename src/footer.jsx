@@ -54,34 +54,34 @@ function Footer() {
                 />
                 <div className="row">
                   <div className="col-sm-6 footerlink">
-                    <p>
+                    <p className="smooth">
                       <Link to="/Smooth" className="text-dark">
                         Smoothies
                       </Link>
                     </p>
-                    <p>
+                    <p className="smooth">
                       <Link to="/Cakes" className="text-dark">
                         Cake
                       </Link>
                     </p>
-                    <p>
+                    <p className="smooth">
                       <Link to="/FoodForEoss" className="text-dark">
                         FoodForEoss
                       </Link>
                     </p>
                   </div>
                   <div className="col-sm-6 footerlink">
-                    <p>
+                    <p className="smooth">
                       <Link to="/Cereal" className="text-dark">
                         Cereal
                       </Link>
                     </p>
-                    <p>
+                    <p className="smooth">
                       <Link to="Yogurt" className="text-dark">
                         Yogurt
                       </Link>
                     </p>
-                    <p>
+                    <p className="smooth">
                       <Link to="/DrinksForEoss" className="text-dark">
                         DrinksForEoss
                       </Link>
