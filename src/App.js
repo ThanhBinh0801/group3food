@@ -22,6 +22,7 @@ import DetailCereal from "./file jsx/CerealHome/Sinhtobo";
 import DetailDrinks from "./file jsx/DrinksForEossHome/Sinhtobo";
 import DetailSearch from "./file jsx/Search/Sinhtobo";
 import Cartiem from "./file jsx/Cart/Cartitem";
+import { FaSearch } from "react-icons/fa";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
@@ -34,7 +35,7 @@ function App() {
             </div>
             <div className="col textheader">
               <Link to="/SearchButton" className="nav-link">
-                Search
+                <FaSearch />
               </Link>
             </div>
             <div className="col textheader">
