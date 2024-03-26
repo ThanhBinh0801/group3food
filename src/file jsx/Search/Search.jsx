@@ -6,7 +6,6 @@ function SearchButton() {
   const [searchText, setSearchText] = useState("");
   const [allData, setAllData] = useState([]);
   const [searchResult, setSearchResult] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
   const [noResult, setNoResult] = useState(false);
   const [clicked, setClicked] = useState(false);
 
@@ -17,8 +16,6 @@ function SearchButton() {
 
   const fetchData = async () => {
     try {
-      setIsLoading(true);
-
       const foodResponse = await fetch(
         "https://65f070efda8c6584131bc736.mockapi.io/FoodForEOSS"
       );
@@ -70,8 +67,6 @@ function SearchButton() {
       setAllData(allData);
     } catch (error) {
       console.error("Error:", error);
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -84,9 +79,6 @@ function SearchButton() {
       return;
     }
 
-    setIsLoading(true);
-    setNoResult(false);
-
     const results = allData.filter((item) =>
       item.Name.toLowerCase().includes(searchText.toLowerCase())
     );
@@ -97,8 +89,6 @@ function SearchButton() {
     } else {
       setSearchResult(results);
     }
-
-    setIsLoading(false);
   };
 
   const handleKeyDown = (event) => {
@@ -109,21 +99,21 @@ function SearchButton() {
   };
 
   return (
-    <div onClick={handleSearch}>
-      <header>
-          <form onSubmit={handleSearch} className="formsearch-border">
+    <div>
+      <header className="search-container">
+          <form onSubmit={handleSearch} className="search-container">
             <input
               type="Text"
               value={searchText}
-              placeholder="..."
+              placeholder="Your Food here..."
               onChange={handleInputChange}
               onKeyDown={handleKeyDown}
-              className="inputsearch border-0"
+              className="inputsearch border-0 search-btn "
             /><span onClick={handleSearch} className={clicked ? "clicked" : ""}><FaSearch/></span>
           </form>
     </header>
         <section>
-        <div className="row row-cols-1 row-cols-md-4 g-4">
+        <div className="row row-cols-1 row-cols-md-4 g-4 search-btn">
           {searchResult && searchResult.length > 0 ? (
             searchResult.map((result, index) => (
               <div key={index} className="col">

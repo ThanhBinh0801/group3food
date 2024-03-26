@@ -46,7 +46,7 @@ function Smooth() {
               <div className="row  dichuyenanhsanpham" key={index}>
                 {pair.map((smoothie, innerIndex) => 
                 (
-                  <div className="col" key={innerIndex}>
+                  <div className="col-6" key={innerIndex}>
                     <Food
                       img={smoothie.img}
                       img1={smoothie.img1}

@@ -1,4 +1,10 @@
 function Chitiet(smoothie) {
+  const handleAddToLocal = () => {
+    // Save the product object to local storage
+    localStorage.setItem('product', JSON.stringify(smoothie));
+    console.log('Product added to local storage:', smoothie);
+    alert('Product added to local storage!');
+  };
   return (
     <>
       <div className="container detailSP">
@@ -8,7 +14,7 @@ function Chitiet(smoothie) {
                 <div>{smoothie.Name}</div>
                 <div className="price1">{smoothie.price}</div> 
                 <div className="buttonchitiet">
-                    <button>Add to cart</button>
+                    <button onClick={handleAddToLocal}>Add to cart</button>
                     <button>Buy</button>
                 </div>
             </div>

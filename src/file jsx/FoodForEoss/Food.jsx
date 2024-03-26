@@ -9,7 +9,7 @@ function Food(props) {
   return (
     <div
       className="cacsanphamchinh"
-      onClick={() => navigate(`/smooth/${props.id}`)}
+      onClick={() => navigate(`/FoodForEoss/${props.id}`)}
     >
       <Carousel interval={3000} controls={false} autoplay={true}>
         <Carousel.Item>
