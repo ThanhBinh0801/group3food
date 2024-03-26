@@ -59,9 +59,7 @@ function App() {
                     {loggedInUser.Name}
                   </Link>
                 ) : (
-                  <Link to="/login" className="nav-link">
-                    Login
-                  </Link>
+                  <Login/>
                 )}
               </div>
               <div className="col textheader smooth">
