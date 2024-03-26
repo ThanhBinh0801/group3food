@@ -10,7 +10,7 @@ function Food(props) {
       className="cacsanphamchinh"
       onClick={() => navigate(`/smooth/${props.id}`)}
     >
-      <Carousel interval={4000} controls={false} autoplay={true}>
+      <Carousel interval={5000} controls={false} autoplay={true}>
         <Carousel.Item className="text-focus-in">
           <div>
             <img src={props.img} alt={props.Name} />
