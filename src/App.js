@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./file jsx/Contact file/Contact";
@@ -27,13 +27,13 @@ function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
     <div className="App">
-      <header className="header">
+      <header className="header slide-in fixed-header">
         <nav className="navheader">
           <div className="row align-items-center ">
-            <div className="col d-flex justify-content-center ">
+            <div className="col d-flex justify-content-center smooth">
               <Menu />
             </div>
-            <div className="col textheader">
+            <div className="col textheader smooth">
               <Link to="/SearchButton" className="nav-link">
                 <FaSearch />
               </Link>
@@ -47,13 +47,13 @@ function App() {
                 Food Shop
               </Link>
             </div>
-            <div className="col textheader">
+            <div className="col textheader smooth">
               <Link to="/contact" className="nav-link">
                 Contact
               </Link>
             </div>
             <div className="col">
-              <div className="col textheader">
+              <div className="col textheader smooth">
                 {loggedInUser ? (
                   <Link to="/profile" className="nav-link">
                     {loggedInUser.Name}
@@ -64,12 +64,16 @@ function App() {
                   </Link>
                 )}
               </div>
-             <div className="col textheader"><Link to="/Cart" className="nav-link">Cart</Link></div>
+              <div className="col textheader smooth">
+                <Link to="/Cart" className="nav-link">
+                  Cart
+                </Link>
+              </div>
             </div>
           </div>
         </nav>
       </header>
-      <section className="siteSection">
+      <section className="siteSection ">
         <Routes>
           <Route path="/SearchButton" element={<SearchButton />} />
           <Route path="/DetailSearch/:Name" element={<DetailSearch />} />
@@ -93,10 +97,10 @@ function App() {
           <Route path="/Yogurt/:id" element={<DetailYogurt />} />
           <Route path="/DrinksForEoss" element={<DrinksForEoss />} />
           <Route path="/DrinksForEoss/:id" element={<DetailDrinks />} />
-          <Route path="/Cart" element={<Cartiem/>}/>
+          <Route path="/Cart" element={<Cartiem />} />
         </Routes>
       </section>
-      <footer>
+      <footer className="slide-in">
         <Footer />
       </footer>
     </div>
