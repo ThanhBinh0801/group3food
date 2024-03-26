@@ -266,7 +266,6 @@ box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
 }
 .search-container:hover{
 animation: 0.15s linear 5;
->>>>>>> 4ceb056c5dd61cf298932e8460af6acc91f3c7bf
 }
 .clicked:hover {
   background-color: #f0f0f0;
