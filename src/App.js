@@ -21,48 +21,49 @@ import DetailFood from "./file jsx/FoodForEoss/Sinhtobo";
 import DetailCereal from "./file jsx/CerealHome/Sinhtobo";
 import DetailDrinks from "./file jsx/DrinksForEossHome/Sinhtobo";
 import DetailSearch from "./file jsx/Search/Sinhtobo";
-import { FaSearch } from "react-icons/fa";
 import Cartiem from "./file jsx/Cart/Cartitem";
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
     <div className="App">
-      <header className="header slide-in fixed-header ">
+      <header className="header">
         <nav className="navheader">
           <div className="row align-items-center ">
-            <div className="col d-flex justify-content-center smooth">
+            <div className="col d-flex justify-content-center ">
               <Menu />
             </div>
-            <div className="col smooth">
+            <div className="col textheader">
               <Link to="/SearchButton" className="nav-link">
-                <FaSearch />
+                Search
               </Link>
             </div>
-            <div className="col">
+            <div className="col textheader">
               <Link
                 to="/"
-                className="nav-link FoodShopmenu fw-bold "
+                className="nav-link FoodShopmenu fw-bold"
                 style={{ fontSize: "65px" }}
               >
                 Food Shop
               </Link>
             </div>
-            <div className="col smooth">
-              <Link to="/contact" className="nav-link ">
+            <div className="col textheader">
+              <Link to="/contact" className="nav-link">
                 Contact
               </Link>
             </div>
-            <div className="col smooth">
-              {loggedInUser ? (
-                <Link to="/profile" className="nav-link">
-                  {loggedInUser.Name}
-                </Link>
-              ) : (
-                <Link to="/login" className="nav-link ">
-                  Login
-                </Link>
-              )}
-             <Link to="/Cart">Cart</Link>
+            <div className="col">
+              <div className="col textheader">
+                {loggedInUser ? (
+                  <Link to="/profile" className="nav-link">
+                    {loggedInUser.Name}
+                  </Link>
+                ) : (
+                  <Link to="/login" className="nav-link">
+                    Login
+                  </Link>
+                )}
+              </div>
+             <div className="col textheader"><Link to="/Cart" className="nav-link">Cart</Link></div>
             </div>
           </div>
         </nav>
@@ -94,11 +95,10 @@ function App() {
           <Route path="/Cart" element={<Cartiem/>}/>
         </Routes>
       </section>
-      <footer className="slide-in">
+      <footer>
         <Footer />
       </footer>
     </div>
   );
 }
-
 export default App;
