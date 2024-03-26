@@ -3,7 +3,7 @@ function Chitiet({ Name, Image, Price}) {
     <>
       <div className="container detailSP">
           <div className="row" >
-              <img src={Image} alt="Hinh Dai dien" className="col-6"/>         
+              <img src={Image} alt="Hinh Dai dien" className="col-5"/>         
             <div className="col-6 thongtin" >
                 <div>{Name}</div>
                 <div className="price1">{Price}</div> 

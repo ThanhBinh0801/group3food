@@ -53,6 +53,7 @@ function Cereal() {
                     price={smoothie.price}
                     img1={smoothie.img1}
                     img2={smoothie.img2}
+                    id = {smoothie.id}
                   />
                 </div>
               ))}
