@@ -4,20 +4,21 @@ import { Carousel } from "react-bootstrap";
 
 function Home() {
   return (
-    <div className="container">
-      <Carousel>
-       <Carousel.Item>
-          <img src="./imgHome/anhtraicay.png" alt="" className="hinhchuyendongtrangchu"/>
-        </Carousel.Item>
-       <Carousel.Item>
-          <img src="./imgHome/anhHeader.png" alt="" className="hinhchuyendongtrangchu"/>
+    <div className="slide-in">
+      <div className="trangchubg">
+        <Carousel>
+         <Carousel.Item>
+            <img src="./imgHome/anhtraicay.png" alt="" className="hinhchuyendongtrangchu"/>
           </Carousel.Item>
-        <Carousel.Item>
-          <img src="./imgHome/anhfood.png" alt="" className="hinhchuyendongtrangchu"/>
-          </Carousel.Item>
-      </Carousel>
-      <br />
-      <div>
+         <Carousel.Item>
+            <img src="./imgHome/anhHeader.png" alt="" className="hinhchuyendongtrangchu"/>
+            </Carousel.Item>
+          <Carousel.Item>
+            <img src="./imgHome/anhfood.png" alt="" className="hinhchuyendongtrangchu"/>
+            </Carousel.Item>
+        </Carousel>
+      </div>
+      <div className="container">
         <div className="row justify-content-center image">
           <img
             src="./imgHome/anhmenuchinh.png"

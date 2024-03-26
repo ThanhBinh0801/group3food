@@ -42,9 +42,9 @@ function App() {
               <Link
                 to="/"
                 className="nav-link FoodShopmenu fw-bold"
-                style={{ fontSize: "65px" }}
+                style={{ fontSize: "55px" }}
               >
-                Food Shop
+                FOOD SHOP
               </Link>
             </div>
             <div className="col textheader smooth">

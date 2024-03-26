@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Search from "./List";
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch } from "react-icons/fa";
 
 function SearchButton() {
   const [searchText, setSearchText] = useState("");
@@ -99,41 +99,45 @@ function SearchButton() {
   };
 
   return (
-    <div>
-      <header className="search-container">
-          <form onSubmit={handleSearch} className="search-container">
-            <input
-              type="Text"
-              value={searchText}
-              placeholder="Your Food here..."
-              onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
-              className="inputsearch border-0 search-btn "
-            /><span onClick={handleSearch} className={clicked ? "clicked" : ""}><FaSearch/></span>
-          </form>
-    </header>
-        <section>
-        <div className="row row-cols-1 row-cols-md-4 g-4 search-btn">
-          {searchResult && searchResult.length > 0 ? (
-            searchResult.map((result, index) => (
-              <div key={index} className="col">
-                <Search
-                  Image={result.Image}
-                  Name={result.Name}
-                  Price={result.Price}
-                  id={result.id}
-                />
-              </div>
-              
-            ))
-          ) : noResult ? (
-            <div className="col">No result</div>
-          ) : (
-            null
-          )}
-        </div>
-        </section>
-      
+    <div className=" searchform">
+      <header>
+        <form onSubmit={handleSearch} className="search-container">
+          <input
+            type="Text"
+            value={searchText}
+            placeholder=""
+            onChange={handleInputChange}
+            onKeyDown={handleKeyDown}
+            className="inputsearch border-0 search-btn "
+          />
+          <span
+            id="search-icon"
+            onClick={handleSearch}
+            className={clicked ? "clicked" : ""}
+          >
+            <FaSearch />
+          </span>
+        </form>
+      </header>
+
+      <div className="container row">
+        {searchResult && searchResult.length > 0 ? (
+          searchResult.map((result, index) => (
+            <div key={index} className="innersearch col-3">
+              <Search
+                Image={result.Image}
+                Name={result.Name}
+                Price={result.Price}
+                id={result.id}
+              />
+            </div>
+          ))
+        ) : noResult ? (
+          <div className="noresult">
+            <span class="loader"></span>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }

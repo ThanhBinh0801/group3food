@@ -40,19 +40,20 @@ function Cereal() {
     <div>
       <section className="container">
         <td /> <br />
-        <img src="./imgCareal/anhCareal.png" alt="" className="image"/>
+        <img src="./imgCareal/anhCareal.png" alt="" />
         <div className="col anhbensmoothies">
           {chunkArray(smoothies, 2).map((pair, index) => (
             <div className="row dichuyenanhsanpham" key={index}>
               {pair.map((smoothie, innerIndex) => (
                 <div className="col" key={innerIndex}>
                   <Food
-                    id={smoothie.id}
+                  id={smoothie.id}
                     Name={smoothie.Name}
                     img={smoothie.img}
                     price={smoothie.price}
                     img1={smoothie.img1}
                     img2={smoothie.img2}
+                    id = {smoothie.id}
                   />
                 </div>
               ))}

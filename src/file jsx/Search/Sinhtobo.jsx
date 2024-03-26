@@ -32,7 +32,7 @@ function DetailSearch() {
 
   return (
     <div>
-      <Chitiet Name={smoothie.Name} Image={smoothie.Image} Price={smoothie.Price} />
+      <Chitiet Name={smoothie.Name} img={smoothie.img} price={smoothie.price} />
     </div>
   );
 }
