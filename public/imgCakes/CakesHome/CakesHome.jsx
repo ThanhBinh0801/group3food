@@ -2,11 +2,11 @@ import Food from "./Food";
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function Cereal() {
+function Cakes() {
   const [smoothies, setSmoothies] = useState([]);
 
   const fetchSmoothies = () => {
-    fetch("https://65f2fa59105614e6549f75dd.mockapi.io/Cereal", {
+    fetch("https://65d55b923f1ab8c63436c64d.mockapi.io/Cakes", {
       method: "GET",
       headers: { "content-type": "application/json" },
     })
@@ -40,7 +40,7 @@ function Cereal() {
     <div>
       <section className="container">
         <td /> <br />
-        <img src="./imgCareal/anhCareal.png" alt="" className="image"/>
+        <img src="./imgCakes/anhCakes.png" alt="" />
         <div className="col anhbensmoothies">
           {chunkArray(smoothies, 2).map((pair, index) => (
             <div className="row dichuyenanhsanpham" key={index}>
@@ -52,7 +52,9 @@ function Cereal() {
                     price={smoothie.price}
                     img1={smoothie.img1}
                     img2={smoothie.img2}
+                    id = {smoothie.id}
                   />
+                  
                 </div>
               ))}
             </div>
@@ -63,4 +65,4 @@ function Cereal() {
   );
 }
 
-export default Cereal;
+export default Cakes;

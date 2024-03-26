@@ -40,7 +40,7 @@ function Yogurt() {
     <div>
       <section className="container">
         <td /> <br />
-        <img src="./imgYogurt/anhYogurt.png" alt="" />
+        <img src="./imgYogurt/anhYogurt.png" alt="" className="image"/>
         <div className="anhbensmoothies">
           {chunkArray(smoothies, 2).map((pair, index) => (
             <div className="row dichuyenanhsanpham" key={index}>

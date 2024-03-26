@@ -66,15 +66,15 @@
   font-size: xx-large;
   align-items: center;
   height: max-content;
-  background-color: rgba(246, 217, 153, 0.568);
+  background-color: rgba(246, 217, 153, 0.088);
   border-bottom: 2px solid #ffffff;
 }
 .header {
   height: max-content;
   background-color: rgb(246, 217, 153);
   font-family: sans-serif;
-  height: max-content;
   background-color: #d28a04;
+  border: 2px solid white;
 }
 .siteFooter {
   height: fit-content;
@@ -220,7 +220,7 @@ img {
 .footerlink a {
   text-decoration: none;
 }
-.inputsearch{
+.inputsearch {
   border-radius: 8px;
   width: 90%;
   height: 50px;
@@ -229,13 +229,12 @@ img {
   outline: none;
   border-color: transparent;
 }
-.formsearch-border{
-  border: 1px solid #000000; 
+.formsearch-border {
+  border: 1px solid #000000;
   border-radius: 5px;
   padding: 5px;
   width: 20%;
   margin: 0 auto;
-  
 }
 .clicked:hover {
   background-color: #f0f0f0;
@@ -287,4 +286,37 @@ img {
     filter: blur(0px);
     opacity: 1;
   }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease;
+}
+.image {
+  transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.image:hover {
+  transform: scale(1.07); /* Phóng to hình ảnh khi di chuột vào */
+  transform-origin: 50% 50%; /* Điểm neo ở giữa */
+}
+.carousel-item {
+  transition: none !important; /* Bỏ hiệu ứng chuyển động */
+}
+.fixed-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Đảm bảo thanh header hiển thị trên cùng */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho thanh header */
 }

@@ -40,7 +40,7 @@ function Cakes() {
     <div>
       <section className="container">
         <td /> <br />
-        <img src="./imgCakes/anhCakes.png" alt="" />
+        <img src="./imgCakes/anhCakes.png" alt="" className="image"/>
         <div className="col anhbensmoothies">
           {chunkArray(smoothies, 2).map((pair, index) => (
             <div className="row dichuyenanhsanpham" key={index}>
@@ -53,7 +53,6 @@ function Cakes() {
                     img1={smoothie.img1}
                     img2={smoothie.img2}
                   />
-                  <Food Name={smoothie.Name} img={smoothie.img} id={smoothie.id} />
                 </div>
               ))}
             </div>
