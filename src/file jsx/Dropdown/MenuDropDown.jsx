@@ -23,7 +23,7 @@ function Menu() {
                   </Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/Cereal">Cereal</Link>
+                  <Link to="/Cereal" className="st">Cereal</Link>
                 </NavDropdown.Item>
               </NavDropdown>
               <Dropdown.Divider />
@@ -33,10 +33,10 @@ function Menu() {
                 className="DropHealthy"
               >
                 <NavDropdown.Item>
-                  <Link to="/Cakes">Cakes</Link>
+                  <Link to="/Cakes" className="st">Cakes</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/Yogurt">Yogurt</Link>
+                  <Link to="/Yogurt" className="st">Yogurt</Link>
                 </NavDropdown.Item>
               </NavDropdown>
               <Dropdown.Divider />
@@ -48,10 +48,10 @@ function Menu() {
                 className="DropHealthy"
               >
                 <NavDropdown.Item>
-                  <Link to="/FoodForEOSS">FoodForEOSS</Link>
+                  <Link to="/FoodForEOSS" className="st">FoodForEOSS</Link>
                 </NavDropdown.Item>
                 <NavDropdown.Item>
-                  <Link to="/Yogurt">DrinkForEOSS</Link>
+                  <Link to="/Yogurt" className="st">DrinkForEOSS</Link>
                 </NavDropdown.Item>
               </NavDropdown>
             </NavDropdown>
