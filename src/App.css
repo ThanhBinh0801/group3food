@@ -326,3 +326,42 @@ Link {
     transition-duration: 2s; /* Adjust the duration as needed */
   }
 }
+@keyframes slideIn {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease;
+}
+.image {
+  transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+}
+
+.image:hover {
+  transform: scale(1.07); /* Phóng to hình ảnh khi di chuột vào */
+  transform-origin: 50% 50%; /* Điểm neo ở giữa */
+}
+.carousel-item {
+  transition: none !important; /* Bỏ hiệu ứng chuyển động */
+}
+.fixed-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* Đảm bảo thanh header hiển thị trên cùng */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho thanh header */
+}
+.hinhchuyendongtrangchu{
+  transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
+  height: 550px;
+  width:100%;
+  text-align: center;
+}
