@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Contact from "./file jsx/Contact file/Contact";
@@ -22,6 +22,8 @@ import DetailCereal from "./file jsx/CerealHome/Sinhtobo";
 import DetailDrinks from "./file jsx/DrinksForEossHome/Sinhtobo";
 import DetailSearch from "./file jsx/Search/Sinhtobo";
 import { FaSearch } from "react-icons/fa";
+import Cartiem from "./file jsx/Cart/Cartitem";
+
 function App() {
   const [loggedInUser, setLoggedInUser] = useState(null);
   return (
@@ -61,6 +63,7 @@ function App() {
                   Login
                 </Link>
               )}
+             <Link to="/Cart">Cart</Link>
             </div>
           </div>
         </nav>
@@ -89,6 +92,7 @@ function App() {
           <Route path="/Yogurt/:id" element={<DetailYogurt />} />
           <Route path="/DrinksForEoss" element={<DrinksForEoss />} />
           <Route path="/DrinksForEoss/:id" element={<DetailDrinks />} />
+          <Route path="/Cart" element={<Cartiem/>}/>
         </Routes>
       </section>
       <footer>

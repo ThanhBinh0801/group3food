@@ -54,7 +54,6 @@ function Cakes() {
                     img2={smoothie.img2}
                     id = {smoothie.id}
                   />
-                  
                 </div>
               ))}
             </div>

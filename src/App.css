@@ -317,6 +317,9 @@ animation: 0.15s linear 5;
     filter: blur(0px);
     opacity: 1;
   }
+  Carousel-item {
+    transition-duration: 2s; /* Adjust the duration as needed */
+  }
 }
 .st{
   text-decoration: none;
