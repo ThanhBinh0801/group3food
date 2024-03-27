@@ -204,7 +204,7 @@ img {
   justify-content: center;
   margin-left: 197px;
 }
-.divlogin{
+.divlogin {
   display: flex;
   justify-content: center;
 }
@@ -303,15 +303,15 @@ Link {
 .textheader:active {
   color: #2b2a2a;
 }
-.custom-dropdown-toggle{
- background-color: #E7B759 !important;
- border: none !important;
- color: #ffffff !important;
- font-size: 35px !important;
- display: flex !important;
- align-items: center !important;
+.custom-dropdown-toggle {
+  background-color: #e7b759 !important;
+  border: none !important;
+  color: #ffffff !important;
+  font-size: 35px !important;
+  display: flex !important;
+  align-items: center !important;
 }
-.custom-dropdown-toggle:hover{
+.custom-dropdown-toggle:hover {
   color: rgb(0, 0, 0) !important;
 }
 /* B edit 172 toi 202 */
@@ -325,7 +325,7 @@ Link {
 .carousel-item.active {
   transform: translateX(0); /* Dịch chuyển slide */
 }
-.trangchubg img{
+.trangchubg img {
   width: 100%;
   height: 700px;
 }
@@ -439,20 +439,21 @@ Link {
   z-index: 1000; /* Đảm bảo thanh header hiển thị trên cùng */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng cho thanh header */
 }
-.hinhchuyendongtrangchu{
+.hinhchuyendongtrangchu {
   transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
   height: 550px;
-  width:100%;
+  width: 100%;
   text-align: center;
   border-radius: 1px !important;
 }
 .offcanvas-menu {
-  background-color:white; /* Màu nền */
+  background-color: white; /* Màu nền */
   padding: 20px; /* Khoảng cách nội dung từ viền */
 }
 
-.offcanvas-menu h3 {
+.offcanvas-menu h5 {
   margin: 30px 0; /* Khoảng cách giữa các mục */
+  text-align: center;
 }
 
 .offcanvas-menu a {
@@ -463,6 +464,6 @@ Link {
 .offcanvas-menu a:hover {
   color: red; /* Màu văn bản khi hover */
 }
-.chinhmauchomenu{
-  background-color:rgb(246, 217, 153);
+.chinhmauchomenu {
+  background-color: rgb(246, 217, 153);
 }

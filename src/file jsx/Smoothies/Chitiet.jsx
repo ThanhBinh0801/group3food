@@ -32,7 +32,7 @@ function Chitiet(props) {
           <form action="">
             <fieldset class="border p-2 fieldset">
               <legend class="float-none w-auto">Infomation of {props.Name}</legend>
-              <div>{props.Description}</div>
+              <pre >{props.Description}</pre>
             </fieldset>
           </form>
         </div>
