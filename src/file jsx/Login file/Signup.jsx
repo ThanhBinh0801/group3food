@@ -13,6 +13,7 @@ function Signup() {
   const [ConfirmPass, setConfirmPass] = useState("");
   const [Phone, setPhone] = useState("");
   const [Address, setAddress] = useState("");
+  const [Gender, setGender] = useState("");
 
   const Submitform = (event) => {
     event.preventDefault();
@@ -22,6 +23,7 @@ function Signup() {
       ConfirmPass: ConfirmPass,
       Phone: Phone,
       Address: Address,
+      Gender: Gender,
     };
     if (Password !== ConfirmPass) {
       alert("Passwords do not match");
@@ -32,6 +34,7 @@ function Signup() {
     console.log("Password:", Password);
     console.log("Phone:", Phone);
     console.log("Address:", Address);
+    console.log("Gender:", Gender)
     handleClose();
     console.log(newSubmit);
     fetch("https://65d5adc7f6967ba8e3bc3180.mockapi.io/Signup", {
@@ -102,6 +105,14 @@ function Signup() {
                 placeholder="Your Address"
                 onChange={(e) => setAddress(e.target.value)}
               />
+            </Form.Group>
+            <Form.Group className="mb-3" controlId="exampleForm.ControlSelect1">
+              <Form.Label>Gender</Form.Label>
+              <Form.Select onChange={(e) => setGender(e.target.value)}>
+                <option>Choose...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </Form.Select>
             </Form.Group>
             <Button type="submit">Send</Button>
           </Form>

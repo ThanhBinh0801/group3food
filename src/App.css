@@ -204,6 +204,10 @@ img {
   justify-content: center;
   margin-left: 197px;
 }
+.divlogin{
+  display: flex;
+  justify-content: center;
+}
 /* B edit 172 detail san pham */
 .thongtin {
   text-align: left;
@@ -298,6 +302,17 @@ Link {
 }
 .textheader:active {
   color: #2b2a2a;
+}
+.custom-dropdown-toggle{
+ background-color: #E7B759 !important;
+ border: none !important;
+ color: #ffffff !important;
+ font-size: 35px !important;
+ display: flex !important;
+ align-items: center !important;
+}
+.custom-dropdown-toggle:hover{
+  color: rgb(0, 0, 0) !important;
 }
 /* B edit 172 toi 202 */
 

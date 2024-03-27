@@ -1,13 +1,15 @@
-
 import { Link } from "react-router-dom";
 import { BsList } from 'react-icons/bs';
-import Button from 'react-bootstrap/Button';
-import Offcanvas from 'react-bootstrap/Offcanvas';
 import { useState } from "react";
+import { Offcanvas } from 'react-bootstrap';
+import Popup from "../Contact file/popupcontact";
+
 function Menu() {
-  const [show, setShow] = useState();
+  const [show, setShow] = useState(false);
+
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
+
   return (
     <>
       <div variant="primary" onClick={handleShow} className="textheader">
@@ -15,22 +17,37 @@ function Menu() {
       </div>
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title><h1>Menu</h1></Offcanvas.Title>
+          <Offcanvas.Title><h2>Menu</h2></Offcanvas.Title>
         </Offcanvas.Header>
+   
         <Offcanvas.Body>
-          <h3>
-            <Link to="/Smooth" className="menuoffcanvas">
-                      Smoothies
-            </Link>
-          </h3>
-          <h3><Link to="/Cereal" className="menuoffcanvas">Cereal</Link></h3>
-          <h3><Link to="/Cakes" className="menuoffcanvas">Cakes</Link></h3>
-          <h3><Link to="/Yogurt" className="menuoffcanvas">Yogurt</Link></h3>
-          <h3><Link to="/FoodForEOSS" className="menuoffcanvas">FoodForEOSS</Link></h3>
-          <h3><Link to="/Yogurt" className="menuoffcanvas">DrinkForEOSS</Link></h3>
+          <p>
+            <h5>
+              <Link to="/Smooth" className="menuoffcanvas">
+                Smoothies
+              </Link>
+            </h5>
+            <h5><Link to="/Cereal" className="menuoffcanvas">Cereal</Link></h5>
+            <h5><Link to="/Cakes" className="menuoffcanvas">Cakes</Link></h5>
+            <h5><Link to="/Yogurt" className="menuoffcanvas">Yogurt</Link></h5>
+            <h5><Link to="/FoodForEOSS" className="menuoffcanvas">FoodForEOSS</Link></h5>
+            <h5><Link to="/Yogurt" className="menuoffcanvas">DrinkForEOSS</Link></h5>
+          </p>
+          <hr />
+          <Offcanvas.Title><h2>Food shop</h2></Offcanvas.Title>
+            <h5 className="text-justify">
+                  Step into our cozy spot offering an array of mouthwatering
+                  snacks crafted with care. From crunchy bites to savory
+                  delights, our snack selection promises to satisfy every
+                  craving. Experience the joy of snacking at Group3 Snack Shop
+                  today!
+            </h5>
+          <hr />
+          <Offcanvas.Title><h2>What can we help you?</h2></Offcanvas.Title>
+          <Popup/>
         </Offcanvas.Body>
-  </Offcanvas> 
-  </>  
+      </Offcanvas> 
+    </>  
   );
 }
 

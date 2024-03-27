@@ -85,17 +85,17 @@ function Footer() {
                   style={{ backgroundColor: "#7c4dff" }}
                 />
                 <p>
-                  <i className="fas fa-print me-3"></i> GROUP3 FOOD SHOP
+                  GROUP3 FOOD SHOP
                 </p>
                 <p>
-                  <i className="fas fa-home me-3"></i> 590 CMT8, Phường 11, Quận
+                  590 CMT8, Phường 11, Quận
                   3, HCM City
                 </p>
                 <p>
-                  <i className="fas fa-envelope me-3"></i> foodshop@gmail.com
+                  foodshop@gmail.com
                 </p>
                 <p>
-                  <i className="fas fa-phone me-3"></i> +84 123 456 789
+                  +84 123 456 789
                 </p>
               </div>
             </div>

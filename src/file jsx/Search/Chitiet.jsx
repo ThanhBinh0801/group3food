@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Chitiet(props) {
   const handleAddToLocal = () => {
@@ -23,7 +24,7 @@ function Chitiet(props) {
           <div className="price1">{props.price}</div>
           <div className="buttonchitiet">
             <button onClick={handleAddToLocal}>Add to local</button>
-            <button>Buy</button>
+            <Link to="/Cart"><button onClick={handleAddToLocal}>Buy</button></Link>
           </div>
         </div>
       </div>

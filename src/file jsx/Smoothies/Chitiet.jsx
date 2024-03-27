@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function Chitiet(props) {
   const handleAddToLocal = () => {
     // Retrieve existing products from local storage
@@ -11,7 +11,7 @@ function Chitiet(props) {
     // Save the updated array back to local storage
     localStorage.setItem('products', JSON.stringify(updatedProducts));
     console.log('Product added to local storage:', props);
-    alert('Product added to local storage!');
+    alert('Add to cart successfully');
   };
 
   return (
@@ -23,14 +23,23 @@ function Chitiet(props) {
           <div className="price1">{props.price}</div>
           <div className="buttonchitiet">
             <button onClick={handleAddToLocal}>Add to local</button>
-            <button>Buy</button>
+            <Link to="/Cart"><button onClick={handleAddToLocal}>Buy</button></Link>
           </div>
+        </div>
+      </div>
+      <div className='row'>
+        <div className='col'>
+          <form action="">
+            <fieldset class="border p-2 fieldset">
+              <legend class="float-none w-auto">Infomation of {props.Name}</legend>
+              <div>{props.Description}</div>
+            </fieldset>
+          </form>
         </div>
       </div>
     </div>
   );
 }
-
 export default Chitiet;
 
 

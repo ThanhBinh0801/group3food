@@ -3,7 +3,7 @@ import { Form, Button, Offcanvas } from "react-bootstrap";
 import Signup from "./Signup";
 import { useNavigate } from "react-router-dom";
 
-function Login({ setLoggedInUser }) {
+function Login({ setLoggedInUser, setShowLoginModal  }) {
   const navigate = useNavigate();
   const [loginName, setLoginName] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -35,11 +35,16 @@ function Login({ setLoggedInUser }) {
         // Successful login
         console.log("Login successful");
         setLoggedInUser(foundUser);
-        navigate("/contact"); // Navigate to the dashboard or any other page
-      } else {
+        console.log("User logged in:", foundUser); // Log the user object
+        // Save the logged-in user data to local storage
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
+        setLoggedInUser(foundUser);
+        // navigate("/contact"); // Navigate to the dashboard or any other page
+        setShowLoginModal(false);
+    } else {
         // Unsuccessful login
         setError("Wrong Name or Password");
-      }
+    }
     } catch (error) {
       console.error("Error:", error);
       setError("Failed to log in. Please try again later.");
@@ -103,4 +108,5 @@ function Login({ setLoggedInUser }) {
 }
 
 export default Login;
+
 

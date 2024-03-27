@@ -41,9 +41,11 @@ function Popup() {
   return (
     <div>
       <header className="popup">
-        <Button variant="primary" onClick={handleShow}>
-          Support: ninhthanhbinh8197@gmail.com
-        </Button>
+        <div className="buttonchitiet">
+          <button variant="primary" onClick={handleShow}>
+            Support: ninhthanhbinh8197@gmail.com
+          </button>
+        </div>
 
         <Modal show={show} onHide={handleClose}>
           <Modal.Header>
@@ -55,7 +57,7 @@ function Popup() {
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Your Name</Form.Label>
+                <Form.Label>Customer's Name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Name"
@@ -67,7 +69,7 @@ function Popup() {
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Your Last Name</Form.Label>
+                <Form.Label>Phone Number</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Name"
@@ -78,7 +80,7 @@ function Popup() {
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Your Email</Form.Label>
+                <Form.Label>Email</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="Name"
@@ -90,7 +92,7 @@ function Popup() {
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
-                <Form.Label>Example textarea</Form.Label>
+                <Form.Label>What can we help you ?</Form.Label>
                 <br />
                 <Form.Control
                   as="textarea"
