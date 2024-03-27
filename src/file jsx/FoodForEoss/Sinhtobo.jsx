@@ -29,7 +29,7 @@ function DetailFood() {
   // console.log(sanpham);
   return (
     <div>
-      <Chitiet Name={smoothie.Name} img={smoothie.img} price={smoothie.price}/>
+      <Chitiet Name={smoothie.Name} img={smoothie.img} price={smoothie.price} Description={smoothie.Description}/>
     </div>
   );
 }

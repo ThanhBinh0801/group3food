@@ -19,13 +19,13 @@ function Home() {
         </Carousel>
       </div>
       <div className="container">
-        <div className="row justify-content-center image">
+        {/* <div className="row justify-content-center image">
           <img
             src="./imgHome/anhmenuchinh.png"
             alt=""
             style={{ maxWidth: "80%", height: "auto" }}
           />
-        </div>
+        </div> */}
         <div className="row" style={{ marginBottom: "3rem", marginTop: "1rem" }}>
           <div className="col-6">
             <Link to="/Smooth">
@@ -42,13 +42,13 @@ function Home() {
             </Link>
           </div>
         </div>
-        <div className="row justify-content-center image">
+        {/* <div className="row justify-content-center image">
           <img
             src="./imgHome/anhSnacksforkids.png"
-            alt=""
+            alt=""1
             style={{ maxWidth: "80%", height: "auto" }}
           />
-        </div>
+        </div> */}
         <div className="row" style={{ marginBottom: "3rem", marginTop: "1rem" }}>
           <div className="col-6 image">
             <Link to="/Cakes">
@@ -61,13 +61,13 @@ function Home() {
             </Link>
           </div>
         </div>
-        <div className="row justify-content-center image">
+        {/* <div className="row justify-content-center image">
           <img
             src="./imgHome/anhEasyonStomachSnacks.png"
             alt=""
             style={{ maxWidth: "80%", height: "auto" }}
           />
-        </div>
+        </div> */}
         <div
           className="row"
           style={{ marginBottom: "3rem", marginTop: "1rem" }}

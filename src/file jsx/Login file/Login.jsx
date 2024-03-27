@@ -30,7 +30,7 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
       const foundUser = userData.find(
         (user) => user.Name === loginName && user.Password === loginPassword
       );
-
+      console.log(foundUser)
       if (foundUser) {
         // Successful login
         console.log("Login successful");
@@ -58,14 +58,12 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
       </div>
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Login</Offcanvas.Title>
+        <h5 className="fw-bold mb-2 text-uppercase ">
+              Welcome to Group3 Food Shop
+            </h5>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="mb-5 mt-md-4">
-            <h2 className="fw-bold mb-2 text-uppercase ">
-              Welcome to Group3 Food Shop
-            </h2>
-            <p className=" mb-3">Please enter your login and password!</p>
             <div className="mb-3">
               <Form onSubmit={handleLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -89,7 +87,7 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
                 </Form.Group>
                 {error && <p className="text-danger">{error}</p>}
                 <div className="d-grid">
-                  <Button variant="primary" type="submit" className="login">
+                  <Button variant="warning" type="submit" className="login">
                     Login
                   </Button>
                 </div>

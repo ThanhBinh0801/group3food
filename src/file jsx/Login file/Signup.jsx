@@ -55,7 +55,7 @@ function Signup() {
 
   return (
     <div className="popup">
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="warning" onClick={handleShow}>
         Sign Up
       </Button>
 
