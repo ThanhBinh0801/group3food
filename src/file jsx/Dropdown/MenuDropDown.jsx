@@ -19,9 +19,12 @@ function Menu() {
         <Offcanvas.Header closeButton className="chinhmauchomenu">
           <Offcanvas.Title><h2>Menu</h2></Offcanvas.Title>
         </Offcanvas.Header>
+
+
         <Offcanvas.Body className="offcanvas-menu">
         <p>
             <h5 className="smooth">
+
               <Link to="/Smooth" className="menuoffcanvas">
                 Smoothies
               </Link>
@@ -45,6 +48,8 @@ function Menu() {
             <hr />
             <Offcanvas.Title><h2>What can we help you?</h2></Offcanvas.Title>
           </div>
+          <Offcanvas.Title><Link to="/contact" className="menuoffcanvas">Contact</Link></Offcanvas.Title>
+          <hr />
           <Popup/>
         </Offcanvas.Body>
       </Offcanvas> 

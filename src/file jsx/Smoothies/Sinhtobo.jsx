@@ -40,7 +40,6 @@ function Detail() {
         img={sanpham.img}
         price={sanpham.price}
         Description={sanpham.Description}
-        addToCart={addToCart} // Pass the addToCart function
       />
     </div>
   );

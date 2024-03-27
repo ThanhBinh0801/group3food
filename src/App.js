@@ -27,7 +27,7 @@ import DetailSearch from "./file jsx/Search/Sinhtobo";
 import Cartiem from "./file jsx/Cart/Cartitem";
 import { FaSearch } from "react-icons/fa";
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("loggedInUser")) || null);
   const navigate = useNavigate();
   const handleLogout = () => {
     setLoggedInUser(null); // Clear the logged-in user state

@@ -295,6 +295,13 @@ Link {
 }
 .menuoffcanvas {
   text-decoration: none;
+  color: black;
+
+}
+.menuoffcanvas:hover{
+  color: #ffb702;
+  font-size: xx-large;
+  transition: 0.5s !important ;
 }
 .textheader:hover {
   color: #000000;
