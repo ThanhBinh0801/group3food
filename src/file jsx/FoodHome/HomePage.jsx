@@ -11,7 +11,7 @@ function Home() {
             <img src="./imgHome/anhtraicay.png" alt="" className="hinhchuyendongtrangchu"/>
           </Carousel.Item>
          <Carousel.Item>
-            <img src="./imgHome/anhHeader.png" alt="" className="hinhchuyendongtrangchu"/>
+            <img src="./imgHome/anhfood1.png" alt="" className="hinhchuyendongtrangchu"/>
             </Carousel.Item>
           <Carousel.Item>
             <img src="./imgHome/anhfood.png" alt="" className="hinhchuyendongtrangchu"/>
@@ -19,7 +19,7 @@ function Home() {
         </Carousel>
       </div>
       <div className="container">
-        <div className="row justify-content-center image">
+        <div className="row justify-content-center">
           <img
             src="./imgHome/anhmenuchinh.png"
             alt=""
@@ -42,7 +42,7 @@ function Home() {
             </Link>
           </div>
         </div>
-        <div className="row justify-content-center image">
+        <div className="row justify-content-center">
           <img
             src="./imgHome/anhSnacksforkids.png"
             alt=""
@@ -61,7 +61,7 @@ function Home() {
             </Link>
           </div>
         </div>
-        <div className="row justify-content-center image">
+        <div className="row justify-content-center">
           <img
             src="./imgHome/anhEasyonStomachSnacks.png"
             alt=""
