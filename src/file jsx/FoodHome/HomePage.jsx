@@ -8,10 +8,10 @@ function Home() {
       <div className="trangchubg">
         <Carousel>
          <Carousel.Item>
-            <img src="./imgHome/anhtraicay.png" alt="headerimg2" className="hinhchuyendongtrangchu"/>
+            <img src={'imgHome/anhtraicay.png'} alt="headerimg2" className="hinhchuyendongtrangchu"/>
           </Carousel.Item>
           <Carousel.Item>
-            <img src="./imgHome/anhfood.png" alt="headerimg1" className="hinhchuyendongtrangchu"/>
+            <img src={'mgHome/anhfood.png'} alt="headerimg1" className="hinhchuyendongtrangchu"/>
             </Carousel.Item>
         </Carousel>
       </div>
