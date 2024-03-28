@@ -29,7 +29,7 @@ function DetailCake() {
   // console.log(sanpham);
   return (
     <div>
-      <Chitiet Name={sanpham.Name} img={sanpham.img} price={sanpham.price} Description={sanpham.Description}/>
+      <Chitiet Name={sanpham.Name} img={sanpham.img} price={sanpham.price} Description={sanpham.Description} Description1={sanpham.Description1} Description2={sanpham.Description2} Description3={sanpham.Description3}  />
     </div>
   )
 }

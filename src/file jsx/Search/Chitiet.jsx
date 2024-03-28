@@ -28,6 +28,19 @@ function Chitiet(props) {
           </div>
         </div>
       </div>
+      <div className='row'>
+        <div className='col'>
+          <form action="">
+            <fieldset class="border p-2 fieldset">
+              <legend class="float-none w-auto">Infomation of {props.Name}</legend>
+              <pre>{props.Description}</pre>
+              <pre>{props.Description1}</pre>
+              <pre>{props.Description2}</pre>
+              <pre>{props.Description3}</pre>
+            </fieldset>
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
