@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import { useParams } from "react-router-dom";
 
 function Cartiem({loggedInUser}) {
+  const { id } = useParams();
+
   const [products, setProducts] = useState([]);
   const [totalPrice, setTotalPrice] = useState(0);
  
   const [delivery, setDelivery] = useState([]);
-  const [totalPay, settotalPay] = useState(0);
+  const [totalPay, setTotalPay] = useState(0);
+
+  const [received, setReceived] = useState([]);
+  const [activeTab, setActiveTab] = useState('Shopping Cart');
 
   useEffect(() => {
-    // Retrieve products from local storage
     const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
     setProducts(storedProducts);
   }, []);
 
   useEffect(() => {
-    // Calculate total price
     let total = 0;
     products.forEach(product => {
       total += product.price * product.quantity;
@@ -23,69 +29,110 @@ function Cartiem({loggedInUser}) {
     setTotalPrice(total);
   }, [products]);
 
-  useEffect(()=>{
-    let total1 = 0;
+  useEffect(() => {
+    let totalPay = 0; // Renamed from total1 to totalPay
     delivery.forEach(product => {
-      total1 += product.price * product.quantity;
-    })
-    settotalPay(total1)
-  },[delivery])
-
-  const handleQuantityChange = (index, newQuantity) => {
-    // Update quantity of the product at the specified index
-    const updatedProducts = [...products];
-    updatedProducts[index].quantity = newQuantity;
-    setProducts(updatedProducts);
-  };
-  const handleDelete = (index) => {
-    const updatedProducts = [...products];
-    updatedProducts.splice(index, 1); // Remove the product at the specified index
-    setProducts(updatedProducts);
-    localStorage.setItem('products', JSON.stringify(updatedProducts)); // Update local storage
-  };
-
-  const handleOrder = () => {
-    // Check if the user is logged in
-    if (!loggedInUser) {
-      // If not logged in, prompt the user to log in
-      alert("Please log in to place an order.");
-      // Optionally, you can redirect the user to the login page here
-      return; // Stop further execution of the function
-    }
-  
-    // Retrieve old delivery items from local storage
-    const storedDelivery = JSON.parse(localStorage.getItem('delivery')) || [];
-    // Concatenate old delivery items with the newly ordered items
-    const newDelivery = [...storedDelivery, ...products];
-    // Save the updated delivery list to local storage
-    localStorage.setItem('delivery', JSON.stringify(newDelivery));
-  
-    // Clear products state
-    setProducts([]);
-    // Clear products from local storage
-    localStorage.removeItem('products');
-  
-    // Update the delivery state to trigger re-rendering
-    setDelivery(newDelivery);
-  };
-  
-  const handleDelete1 = (index) => {
-    const updatedDelivery = [...delivery];
-    updatedDelivery.splice(index, 1); // Remove the product at the specified index
-    setDelivery(updatedDelivery); // Update the delivery state to reflect the deleted product
-    localStorage.setItem('delivery', JSON.stringify(updatedDelivery)); // Update local storage
-};
+      totalPay += product.price * product.quantity;
+    });
+    setTotalPay(totalPay); // Updated state variable name to setTotalPay
+  }, [delivery]);
 
   useEffect(() => {
-    // Retrieve products from local storage
     const storedDelivery = JSON.parse(localStorage.getItem('delivery')) || [];
     setDelivery(storedDelivery);
   }, []);
 
+  useEffect(() => {
+    const storedReceived = JSON.parse(localStorage.getItem('received')) || [];
+    setReceived(storedReceived);
+  }, []);
+
+  useEffect(() => {
+    
+    if (!loggedInUser) {
+      setReceived([]);
+      localStorage.removeItem('received');
+    }
+  }, [loggedInUser]);
+
+  const handleQuantityChange = (index, newQuantity) => {
+    const updatedProducts = [...products];
+    updatedProducts[index].quantity = newQuantity;
+    setProducts(updatedProducts);
+    localStorage.setItem('products', JSON.stringify(updatedProducts));
+  };
+
+  const handleDelete = (index) => {
+    const updatedProducts = [...products];
+    updatedProducts.splice(index, 1);
+    setProducts(updatedProducts);
+    localStorage.setItem('products', JSON.stringify(updatedProducts));
+  };
+
+  const handleOrder = () => {
+    if (!loggedInUser) {
+      alert("Please log in to place an order.");
+      return;
+    }
+  
+    const newDelivery = [...delivery, ...products];
+    localStorage.setItem('delivery', JSON.stringify(newDelivery));
+    setDelivery(newDelivery);
+
+    setProducts([]);
+    localStorage.removeItem('products');
+  };
+
+  const handleReceived = async () => {
+    const newReceived = [...received, ...delivery];
+    localStorage.setItem('received', JSON.stringify(newReceived));
+    setReceived(newReceived);
+
+    setDelivery([]);
+    localStorage.removeItem('delivery');
+
+    const dataToSend = {
+      user: loggedInUser, // Assuming loggedInUser contains the user information
+      products: newReceived // The list of products received
+    };
+  
+    try {
+      // Make an HTTP POST request to the API endpoint
+      const response = await fetch('https://66042be52393662c31d0d36b.mockapi.io/Thongtinmua', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dataToSend)
+      });
+  
+      // Check if the request was successful
+      if (!response.ok) {
+        throw new Error('Failed to send data to the server');
+      }
+  
+      console.log('Data sent successfully');
+    } catch (error) {
+      console.error('Error sending data to the server:', error);
+      // You can handle errors here, such as displaying a message to the user
+    }
+  };
+
+  const handleDelete1 = (index) => {
+    const updatedDelivery = [...delivery];
+    updatedDelivery.splice(index, 1);
+    setDelivery(updatedDelivery);
+    localStorage.setItem('delivery', JSON.stringify(updatedDelivery));
+  };
+
   return (
-    <div className="container">
-      <section>
-        <h2>Shopping Cart</h2>
+    <Tabs 
+    activeKey={activeTab}
+      onSelect={(tab) => setActiveTab(tab)}
+      id="justify-tab-example"
+      className="mb-3"
+      justify>
+      <Tab eventKey="Shopping Cart" title="Shopping Cart">
         {products.length > 0 ? (
           <section className="text-center text-md-start mt-5">
             <div className="container">
@@ -145,13 +192,13 @@ function Cartiem({loggedInUser}) {
                 </div>
               </div>
         <hr />
-      </section>
-      <section>
-        <h2>Dilivery</h2>
+      </Tab>
+      <Tab eventKey="Dilivery" title="Dilivery">
         {delivery.length > 0 ? (
           <section className="text-center text-md-start mt-5">
             <div className="container">
-              {delivery.map((product, index) => (
+              {delivery
+              .map((product, index) => (
                 <div className="row mt-3" key={index}>
                   <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     <h6 className="text-uppercase fw-bold">Snacks</h6>
@@ -187,6 +234,7 @@ function Cartiem({loggedInUser}) {
                   <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     {/* Delete button */}
                     <button className="btn btn-danger" onClick={() => handleDelete1(index)}>Cancel order</button>
+                    <button className="btn btn-success" onClick={handleReceived}>Received</button>
                   </div>
                 </div>
                 
@@ -202,8 +250,53 @@ function Cartiem({loggedInUser}) {
                   <h5>Total pay: {totalPay}</h5>
                 </div>
               </div>
-      </section>
-    </div>
+      </Tab>
+      <Tab eventKey="Received" title="Received">
+  {received.length > 0 ? (
+    <section className="text-center text-md-start mt-5">
+      <div className="container">
+        {received.map((product, index) => (
+          <div className="row mt-3" key={index}>
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
+              <h6 className="text-uppercase fw-bold">Snacks</h6>
+              <hr className="mb-4 mt-0" style={{ backgroundColor: "#7c4dff" }} />
+              <p className="text-justify"><img src={product.img} className="img-fluid" alt="Product" /></p>
+            </div>
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
+              <h6 className="text-uppercase fw-bold text-center">Name</h6>
+              <hr className="mb-4 mt-0" style={{ backgroundColor: "#7c4dff" }} />
+              <p className="d-flex flex-column justify-content-center align-items-center">{product.Name}</p>
+            </div>
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
+              <h6 className="text-uppercase fw-bold text-center">Price</h6>
+              <hr className="mb-4 mt-0" style={{ backgroundColor: "#7c4dff" }} />
+              <p className="d-flex flex-column justify-content-center align-items-center">{product.price} vnđ</p>
+            </div>
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
+              <h6 className="text-uppercase fw-bold text-center">Quantity</h6>
+              <hr className="mb-4 mt-0" style={{ backgroundColor: "#7c4dff" }} />
+              <input
+                type="number"
+                className="form-control"
+                placeholder='Please enter Quantity'
+                value={product.quantity}
+                readOnly={true}
+              />
+            </div>
+            <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
+              <h6 className="text-uppercase fw-bold text-center">Total Price</h6>
+              <hr className="mb-4 mt-0" style={{ backgroundColor: "#7c4dff" }} />
+              <p className="d-flex flex-column justify-content-center align-items-center">{product.price * product.quantity} vnđ</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  ) : (
+    <div>You haven't received any food yet.</div>
+  )}
+</Tab>
+    </Tabs>
   );
 }
 export default Cartiem;
