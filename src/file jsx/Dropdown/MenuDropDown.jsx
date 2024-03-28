@@ -32,7 +32,7 @@ function Menu() {
             <h5><Link to="/Cakes" className="menuoffcanvas">Cakes</Link></h5>
             <h5><Link to="/Yogurt" className="menuoffcanvas">Yogurt</Link></h5>
             <h5><Link to="/FoodForEOSS" className="menuoffcanvas">FoodForEOSS</Link></h5>
-            <h5><Link to="/Yogurt" className="menuoffcanvas">DrinkForEOSS</Link></h5>
+            <h5><Link to="/DrinksForEoss" className="menuoffcanvas">DrinkForEOSS</Link></h5>
           </p>
           <hr />
           <div>          

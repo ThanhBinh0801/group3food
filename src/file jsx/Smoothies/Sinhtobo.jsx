@@ -7,10 +7,6 @@ function Detail() {
   const [sanpham, setsanpham] = useState({});
   const [cartItems, setCartItems] = useState([]);
 
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
-  };
-
   const getSanphams = () => {
     fetch(`https://65d55b923f1ab8c63436c64d.mockapi.io/smoothies/${id}`, {
       method: "GET",

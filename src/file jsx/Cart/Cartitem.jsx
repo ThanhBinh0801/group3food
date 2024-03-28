@@ -83,45 +83,33 @@ function Cartiem({loggedInUser}) {
     localStorage.removeItem('products');
   };
 
-  const handleReceived = async () => {
+  const handleReceived = async (index) => {
+    // Ensure that the user is logged in
     if (!loggedInUser) {
-      alert("Please log in to place an order.");
-      return;
+        alert("Please log in to place an order.");
+        return;
     }
-    const newReceived = [...received, ...delivery];
+
+    // Retrieve the selected product object from the delivery state using the index
+    const selectedProduct = delivery[index];
+
+    // Get the existing received products from local storage
+    const storedReceived = JSON.parse(localStorage.getItem('received')) || [];
+
+    // Add the selected product to the received products array
+    const newReceived = [...storedReceived, selectedProduct];
+
+    // Save the updated received products array to local storage
     localStorage.setItem('received', JSON.stringify(newReceived));
-    setReceived(newReceived);
 
-    setDelivery([]);
-    localStorage.removeItem('delivery');
+    // Log the updated received products array
+    console.log('Received product:', selectedProduct);
 
-    const dataToSend = {
-      user: loggedInUser, // Assuming loggedInUser contains the user information
-      products: newReceived // The list of products received
-    };
-  
-    try {
-      // Make an HTTP POST request to the API endpoint
-      const response = await fetch('https://66042be52393662c31d0d36b.mockapi.io/Thongtinmua', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(dataToSend)
-      });
-  
-      // Check if the request was successful
-      if (!response.ok) {
-        throw new Error('Failed to send data to the server');
-      }
-  
-      console.log('Data sent successfully');
-    } catch (error) {
-      console.error('Error sending data to the server:', error);
-      // You can handle errors here, such as displaying a message to the user
-    }
-  };
-
+    // Clear the delivery state and local storage
+    const updatedDelivery = delivery.filter((_, i) => i !== index);
+    setDelivery(updatedDelivery);
+    localStorage.setItem('delivery', JSON.stringify(updatedDelivery));
+};
   const handleDelete1 = (index) => {
     const updatedDelivery = [...delivery];
     updatedDelivery.splice(index, 1);
@@ -238,7 +226,7 @@ function Cartiem({loggedInUser}) {
                   <div className="col-md-2 col-lg-2 col-xl-2 mx-auto">
                     {/* Delete button */}
                     <button className="btn btn-danger" onClick={() => handleDelete1(index)}>Cancel order</button>
-                    <button className="btn btn-success" onClick={handleReceived}>Received</button>
+                    <button className="btn btn-success" onClick={() => handleReceived(index)}>Received</button>
                   </div>
                 </div>
                 
