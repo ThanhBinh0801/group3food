@@ -84,6 +84,10 @@ function Cartiem({loggedInUser}) {
   };
 
   const handleReceived = async () => {
+    if (!loggedInUser) {
+      alert("Please log in to place an order.");
+      return;
+    }
     const newReceived = [...received, ...delivery];
     localStorage.setItem('received', JSON.stringify(newReceived));
     setReceived(newReceived);

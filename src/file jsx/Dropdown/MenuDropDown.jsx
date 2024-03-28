@@ -16,24 +16,21 @@ function Menu() {
         Menu<BsList/>
       </div>
       <Offcanvas show={show} onHide={handleClose}>
-        <Offcanvas.Header closeButton className="chinhmauchomenu">
+        <Offcanvas.Header closeButton>
           <Offcanvas.Title><h2>Menu</h2></Offcanvas.Title>
         </Offcanvas.Header>
-
-
-        <Offcanvas.Body className="offcanvas-menu">
-        <p>
-            <h5 className="smooth">
-
+        <Offcanvas.Body>
+          <p>
+            <h5>
               <Link to="/Smooth" className="menuoffcanvas">
                 Smoothies
               </Link>
             </h5>
-            <h5 className="smooth"><Link to="/Cereal" className="menuoffcanvas">Cereal</Link></h5>
-            <h5 className="smooth"><Link to="/Cakes" className="menuoffcanvas">Cakes</Link></h5>
-            <h5 className="smooth"><Link to="/Yogurt" className="menuoffcanvas">Yogurt</Link></h5>
-            <h5 className="smooth"><Link to="/FoodForEOSS" className="menuoffcanvas">FoodForEOSS</Link></h5>
-            <h5 className="smooth"><Link to="/Yogurt" className="menuoffcanvas">DrinkForEOSS</Link></h5>
+            <h5><Link to="/Cereal" className="menuoffcanvas">Cereal</Link></h5>
+            <h5><Link to="/Cakes" className="menuoffcanvas">Cakes</Link></h5>
+            <h5><Link to="/Yogurt" className="menuoffcanvas">Yogurt</Link></h5>
+            <h5><Link to="/FoodForEOSS" className="menuoffcanvas">FoodForEOSS</Link></h5>
+            <h5><Link to="/Yogurt" className="menuoffcanvas">DrinkForEOSS</Link></h5>
           </p>
           <hr />
           <Offcanvas.Title><Link to="/contact" className="menuoffcanvas">Contact</Link></Offcanvas.Title>
@@ -42,7 +39,7 @@ function Menu() {
           <Popup/>
         </Offcanvas.Body>
       </Offcanvas> 
-  </>  
+    </>  
   );
 }
 
