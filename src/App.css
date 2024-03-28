@@ -296,9 +296,8 @@ Link {
 .menuoffcanvas {
   text-decoration: none;
   color: black;
-
 }
-.menuoffcanvas:hover{
+.menuoffcanvas:hover {
   color: #ffb702;
   font-size: xx-large;
   transition: 0.5s !important ;
@@ -475,5 +474,29 @@ Link {
 }
 .chinhmauchomenu {
   background-color: rgb(246, 217, 153);
+  font-family: sans-serif;
 }
-
+.chinhchuinfomation {
+  font-size: 30px;
+  font-weight: 600;
+  color: red;
+  font-family: sans-serif;
+  text-align: center;
+}
+.chinhchuchitietsanpham {
+  font-size: 25px;
+  color: blue;
+  font-family: sans-serif;
+  text-align: center;
+}
+.chinhnoidungchitietsanpham {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.bgsp {
+  background-color: rgb(246, 217, 153);
+  text-align: left;
+}
+.no-scroll-y {
+  max-height: none;
+}
