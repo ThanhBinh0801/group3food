@@ -8,10 +8,10 @@ function Home() {
       <div className="trangchubg">
         <Carousel>
          <Carousel.Item>
-            <img src="imgHome/anhtraicay.png" alt="headerimg2" className="hinhchuyendongtrangchu"/>
+            <img src="/imgHome/anhtraicay.png" alt="headerimg2" className="hinhchuyendongtrangchu"/>
           </Carousel.Item>
           <Carousel.Item>
-            <img src="imgHome/anhfood.png" alt="headerimg1" className="hinhchuyendongtrangchu"/>
+            <img src="/imgHome/anhfood.png" alt="headerimg1" className="hinhchuyendongtrangchu"/>
             </Carousel.Item>
         </Carousel>
       </div>
@@ -27,7 +27,7 @@ function Home() {
           <div className="col-6">
             <Link to="/Smooth">
               <img
-                src="imgHome/anhSmoothies.png"
+                src="/imgHome/anhSmoothies.png"
                 alt="smoo"
                 className="img-fluid image"
               />
@@ -35,7 +35,7 @@ function Home() {
           </div>
           <div className="col-6 image">
             <Link to="/Cereal">
-              <img src="imgHome/anhCereal.png" alt="cereal" className="img-fluid" />
+              <img src="/imgHome/anhCereal.png" alt="cereal" className="img-fluid" />
             </Link>
           </div>
         </div>
@@ -49,12 +49,12 @@ function Home() {
         <div className="row" style={{ marginBottom: "3rem", marginTop: "1rem" }}>
           <div className="col-6 image">
             <Link to="/Cakes">
-              <img src="imgHome/anhCakes.png" alt="cake" className="img-fluid" />
+              <img src="/imgHome/anhCakes.png" alt="cake" className="img-fluid" />
             </Link>
           </div>
           <div className="col-6 image">
             <Link to="/Yogurt">
-              <img src="imgHome/anhYogurt.png" alt="yogurt" className="img-fluid" />
+              <img src="/imgHome/anhYogurt.png" alt="yogurt" className="img-fluid" />
             </Link>
           </div>
         </div>
@@ -72,7 +72,7 @@ function Home() {
           <div className="col-6 image">
             <Link to="/FoodForEoss">
               <img
-                src="imgHome/anhFoodforEOSS.png"
+                src="/imgHome/anhFoodforEOSS.png"
                 alt="food"
                 className="img-fluid"
               />
@@ -80,7 +80,7 @@ function Home() {
           </div>
           <div className="col-6 image">
             <Link to="/DrinksForEoss">
-              <img src="imgHome/anhDrinks.png" alt="Drink" className="img-fluid" />
+              <img src="/imgHome/anhDrinks.png" alt="Drink" className="img-fluid" />
             </Link>
           </div>
         </div>
