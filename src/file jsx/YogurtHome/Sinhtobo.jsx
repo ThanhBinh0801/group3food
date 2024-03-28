@@ -29,7 +29,7 @@ function DetailYogurt() {
   // console.log(sanpham);
   return (
     <div>
-      <Chitiet Name={smoothie.Name} img={smoothie.img} price={smoothie.price} Description={smoothie.Description}/>
+      <Chitiet Name={smoothie.Name} img={smoothie.img} price={smoothie.price} Description={smoothie.Description} Description1={smoothie.Description1} Description2={smoothie.Description2} Description3={smoothie.Description3} />
     </div>
   );
 }

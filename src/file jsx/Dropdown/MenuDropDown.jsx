@@ -33,9 +33,20 @@ function Menu() {
             <h5><Link to="/Yogurt" className="menuoffcanvas">DrinkForEOSS</Link></h5>
           </p>
           <hr />
+          <div>
+            <Offcanvas.Title><h2>Food shop</h2></Offcanvas.Title>
+              <h5 className="text-justify ">
+                    Step into our cozy spot offering an array of mouthwatering
+                    snacks crafted with care. From crunchy bites to savory
+                    delights, our snack selection promises to satisfy every
+                    craving. Experience the joy of snacking at Group3 Snack Shop
+                    today!
+              </h5>
+            <hr />
+            <Offcanvas.Title><h2>What can we help you?</h2></Offcanvas.Title>
+          </div>
           <Offcanvas.Title><Link to="/contact" className="menuoffcanvas">Contact</Link></Offcanvas.Title>
           <hr />
-          <Offcanvas.Title><h2>What can we help you?</h2></Offcanvas.Title>
           <Popup/>
         </Offcanvas.Body>
       </Offcanvas> 

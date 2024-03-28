@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function StarRating({ rating, onRatingChange }) {
   const [hoverRating, setHoverRating] = useState(0);
@@ -18,9 +18,25 @@ function StarRating({ rating, onRatingChange }) {
 
   const renderStar = (index) => {
     if (hoverRating >= index) {
-      return <span key={index} onClick={() => handleClick(index)} onMouseEnter={() => handleMouseEnter(index)}>&#9733;</span>; // Filled star
+      return (
+        <span
+          key={index}
+          onClick={() => handleClick(index)}
+          onMouseEnter={() => handleMouseEnter(index)}
+        >
+          &#9733;
+        </span>
+      ); // Filled star
     } else {
-      return <span key={index} onClick={() => handleClick(index)} onMouseEnter={() => handleMouseEnter(index)}>&#9734;</span>; // Empty star
+      return (
+        <span
+          key={index}
+          onClick={() => handleClick(index)}
+          onMouseEnter={() => handleMouseEnter(index)}
+        >
+          &#9734;
+        </span>
+      ); // Empty star
     }
   };
 
@@ -30,10 +46,7 @@ function StarRating({ rating, onRatingChange }) {
   }
 
   return (
-    <div
-      className="star-rating"
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="star-rating" onMouseLeave={handleMouseLeave}>
       {stars}
     </div>
   );
@@ -47,15 +60,15 @@ function Chitiet(props) {
   };
   const handleAddToLocal = () => {
     // Retrieve existing products from local storage
-    const existingProducts = JSON.parse(localStorage.getItem('products')) || [];
-    
+    const existingProducts = JSON.parse(localStorage.getItem("products")) || [];
+
     // Add the current product to the existing array
     const updatedProducts = [...existingProducts, props];
 
     // Save the updated array back to local storage
-    localStorage.setItem('products', JSON.stringify(updatedProducts));
-    console.log('Product added to local storage:', props);
-    alert('Product added to local storage!');
+    localStorage.setItem("products", JSON.stringify(updatedProducts));
+    console.log("Product added to local storage:", props);
+    alert("Product added to local storage!");
   };
 
   return (
@@ -68,16 +81,28 @@ function Chitiet(props) {
           <div className="price1">{props.price}</div>
           <div className="buttonchitiet">
             <button onClick={handleAddToLocal}>Add to local</button>
-            <Link to="/Cart"><button onClick={handleAddToLocal}>Buy</button></Link>
+            <Link to="/Cart">
+              <button onClick={handleAddToLocal}>Buy</button>
+            </Link>
           </div>
         </div>
       </div>
-      <div className='row'>
-        <div className='col'>
+      <div className="row">
+        <div className="col">
           <form action="">
             <fieldset class="border p-2 fieldset">
-              <legend class="float-none w-auto">Infomation of {props.Name}</legend>
-              <div>{props.Description}</div>
+              <legend class="float-none w-auto">
+                Infomation of {props.Name}
+              </legend>
+              <pre>
+                <div>Ingredients:</div>
+                {props.Description}
+              </pre>
+              <pre>
+                <div>Instructions:</div>
+                {props.Description1}
+              </pre>
+              <pre><div>Advantages:</div>{props.Description2}</pre>
             </fieldset>
           </form>
         </div>

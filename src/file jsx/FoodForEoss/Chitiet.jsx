@@ -77,7 +77,9 @@ function Chitiet(props) {
           <form action="">
             <fieldset class="border p-2 fieldset">
               <legend class="float-none w-auto">Infomation of {props.Name}</legend>
-              <div>{props.Description}</div>
+              <pre><div>Ingredients</div>{props.Description}</pre>
+              <pre><div>Instructions:</div>{props.Description1}</pre>
+              <pre><div>Advantages:</div>{props.Description2}</pre>
             </fieldset>
           </form>
         </div>
