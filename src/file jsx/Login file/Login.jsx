@@ -44,6 +44,9 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
     } else {
         // Unsuccessful login
         setError("Wrong Name or Password");
+        setTimeout(() => {
+          setError("");
+        }, 4000);
     }
     } catch (error) {
       console.error("Error:", error);

@@ -31,10 +31,9 @@ function App() {
   const navigate = useNavigate();
   const handleLogout = () => {
     setLoggedInUser(null); // Clear the logged-in user state
-    localStorage.removeItem("Name");
-    localStorage.removeItem("PHONE");
-    localStorage.removeItem("ADDRESS");
-    localStorage.removeItem("GENDER");
+    localStorage.removeItem("loggedInUser");
+    // Set the logged-in user state to null or an empty object
+    setLoggedInUser(null); // or setLoggedInUser({});
     navigate(-1);
   };
 

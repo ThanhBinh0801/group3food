@@ -47,7 +47,7 @@ function Cereal() {
               {pair.map((smoothie, innerIndex) => (
                 <div className="col" key={innerIndex}>
                   <Food
-                    id={smoothie.id}
+                  id={smoothie.id}
                     Name={smoothie.Name}
                     img={smoothie.img}
                     price={smoothie.price}
