@@ -22,24 +22,33 @@ function Menu() {
           <Offcanvas.Title><h2>Menu</h2></Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
+          {/* <hr style={{ borderStyle: 'solid', borderWidth: '4px' }}/> */}
           <p>
+          <Offcanvas.Title style={{ borderBottom: '2px solid black' }}><h3>-Healthy Snack</h3></Offcanvas.Title>
+          
             <h5>
               <Link to="/Smooth" className="menuoffcanvas">
-                Smoothies
+                     Smoothies
               </Link>
             </h5>
-            <h5><Link to="/Cereal" className="menuoffcanvas">Cereal</Link></h5>
-            <h5><Link to="/Cakes" className="menuoffcanvas">Cakes</Link></h5>
-            <h5><Link to="/Yogurt" className="menuoffcanvas">Yogurt</Link></h5>
-            <h5><Link to="/FoodForEOSS" className="menuoffcanvas">FoodForEOSS</Link></h5>
-            <h5><Link to="/DrinksForEoss" className="menuoffcanvas">DrinkForEOSS</Link></h5>
+            <h5><Link to="/Cereal" className="menuoffcanvas">     Cereal</Link></h5>
+           
+            <Offcanvas.Title style={{ borderBottom: '2px solid black' }}><h3>- Snacks for kids</h3></Offcanvas.Title>
+            <h5><Link to="/Cakes" className="menuoffcanvas">    Cakes</Link></h5>
+            <h5><Link to="/Yogurt" className="menuoffcanvas">    Yogurt</Link></h5>
+            
+            <Offcanvas.Title style={{ borderBottom: '2px solid black' }}><h3>- Easy on stomach snacks</h3></Offcanvas.Title>
+            <h5><Link to="/FoodForEOSS" className="menuoffcanvas">     FoodForEOSS</Link></h5>
+            <h5><Link to="/DrinksForEoss" className="menuoffcanvas">    DrinkForEOSS</Link></h5>
           </p>
-          <hr />
-          <div>          
-          <Offcanvas.Title><h2>What can we help you?</h2></Offcanvas.Title>         
+          {/* <hr style={{ borderStyle: 'solid black', borderWidth: '4px' }}/> */}
+          <p>          
+          <Offcanvas.Header>
+            <Offcanvas.Title><h2>What can we help you?</h2></Offcanvas.Title> 
+          </Offcanvas.Header>        
           <Offcanvas.Title><Link to="/contact" className="menuoffcanvas">Contact</Link></Offcanvas.Title>
-          </div>
           <Popup/>
+          </p>
         </Offcanvas.Body>
       </Offcanvas> 
     </>  

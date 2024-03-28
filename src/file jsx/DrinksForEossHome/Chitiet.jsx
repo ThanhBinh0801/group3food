@@ -90,32 +90,23 @@ function Chitiet(props) {
       <div className="row">
         <div className="col">
           <form action="">
-            <fieldset class="border p-2 fieldset bgsp">
-              <legend class="float-none w-auto chinhchuinfomation">
+            <fieldset class="border p-2 fieldset">
+              <legend class="float-none w-auto">
                 Infomation of {props.Name}
               </legend>
               <pre>
-                <div className="chinhchuchitietsanpham">Ingredients:</div>
-                <div className="chinhnoidungchitietsanpham">
-                  {props.Description}
-                </div>
+                <div>Ingredients:</div>
+                {props.Description}
               </pre>
               <pre>
-                <div className="chinhchuchitietsanpham">Instructions:</div>
-                <div className="chinhnoidungchitietsanpham">
-                  {props.Description1}
-                </div>
+                <div>Instructions:</div>
+                {props.Description1}
               </pre>
               <pre>
-                <div className="chinhchuchitietsanpham">Instructions:</div>
-                <div className="chinhnoidungchitietsanpham">
-                  {props.Description2}
-                </div>
+                <div>Instructions:</div>
+                {props.Description2}
               </pre>
-              <pre>
-                <div>Flavor Variations:</div>
-                {props.Description3}
-              </pre>
+              <pre><div>Flavor Variations:</div>{props.Description3}</pre>
             </fieldset>
           </form>
         </div>
