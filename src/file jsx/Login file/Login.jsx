@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Form, Button, Offcanvas } from "react-bootstrap";
 import Signup from "./Signup";
 import { useNavigate } from "react-router-dom";
+import { MdPeople } from "react-icons/md";
 
-function Login({ setLoggedInUser, setShowLoginModal  }) {
+function Login({ setLoggedInUser, setShowLoginModal }) {
   const navigate = useNavigate();
   const [loginName, setLoginName] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -30,7 +31,7 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
       const foundUser = userData.find(
         (user) => user.Name === loginName && user.Password === loginPassword
       );
-      console.log(foundUser)
+      console.log(foundUser);
       if (foundUser) {
         // Successful login
         console.log("Login successful");
@@ -41,13 +42,13 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
         setLoggedInUser(foundUser);
         // navigate("/contact"); // Navigate to the dashboard or any other page
         setShowLoginModal(false);
-    } else {
+      } else {
         // Unsuccessful login
         setError("Wrong Name or Password");
         setTimeout(() => {
           setError("");
         }, 4000);
-    }
+      }
     } catch (error) {
       console.error("Error:", error);
       setError("Failed to log in. Please try again later.");
@@ -57,13 +58,13 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
   return (
     <header>
       <div variant="primary" onClick={handleShow}>
-        Login
+        Login <MdPeople />
       </div>
       <Offcanvas show={show} onHide={handleClose} placement="end">
         <Offcanvas.Header closeButton>
-        <h5 className="fw-bold mb-2 text-uppercase ">
-              Welcome to Group3 Food Shop
-            </h5>
+          <h5 className="fw-bold mb-2 text-uppercase ">
+            Welcome to Group3 Food Shop
+          </h5>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="mb-5 mt-md-4">
@@ -109,5 +110,3 @@ function Login({ setLoggedInUser, setShowLoginModal  }) {
 }
 
 export default Login;
-
-

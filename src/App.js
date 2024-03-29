@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import Dropdown from 'react-bootstrap/Dropdown';
+import Dropdown from "react-bootstrap/Dropdown";
 import Contact from "./file jsx/Contact file/Contact";
 import Login from "./file jsx/Login file/Login";
 import Profile from "./file jsx/Login file/Profile";
@@ -26,8 +26,12 @@ import DetailDrinks from "./file jsx/DrinksForEossHome/Sinhtobo";
 import DetailSearch from "./file jsx/Search/Sinhtobo";
 import Cartiem from "./file jsx/Cart/Cartitem";
 import { FaSearch } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
+
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState(JSON.parse(localStorage.getItem("loggedInUser")) || null);
+  const [loggedInUser, setLoggedInUser] = useState(
+    JSON.parse(localStorage.getItem("loggedInUser")) || null
+  );
   const navigate = useNavigate();
   const handleLogout = () => {
     setLoggedInUser(null); // Clear the logged-in user state
@@ -66,26 +70,33 @@ function App() {
             </div>
             <div className="col">
               <div className="col textheader smooth">
-              {loggedInUser ? (
-                    <Dropdown className="divlogin">   
-                      <Link to="/profile" className="nav-link">{loggedInUser.Name}</Link>
-                      <Dropdown.Toggle 
-                      split variant="success" 
-                      id="dropdown-split-basic" 
-                      className="custom-dropdown-toggle"/>
-                      <Dropdown.Menu>
-                        <Dropdown.Item onClick={handleLogout} 
-                        id="dropdown-button-dark-example1" 
-                        >Log Out</Dropdown.Item>
-                      </Dropdown.Menu>
-                      </Dropdown>
-              ) : (
+                {loggedInUser ? (
+                  <Dropdown className="divlogin">
+                    <Link to="/profile" className="nav-link">
+                      {loggedInUser.Name}
+                    </Link>
+                    <Dropdown.Toggle
+                      split
+                      variant="success"
+                      id="dropdown-split-basic"
+                      className="custom-dropdown-toggle"
+                    />
+                    <Dropdown.Menu>
+                      <Dropdown.Item
+                        onClick={handleLogout}
+                        id="dropdown-button-dark-example1"
+                      >
+                        Log Out
+                      </Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                ) : (
                   <Login setLoggedInUser={setLoggedInUser} />
-              )}
+                )}
               </div>
               <div className="col textheader smooth">
                 <Link to="/Cart" className="nav-link">
-                  Cart
+                  <FaShoppingCart />
                 </Link>
               </div>
             </div>
@@ -98,8 +109,11 @@ function App() {
           <Route path="/DetailSearch/:Name" element={<DetailSearch />} />
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login setLoggedInUser={setLoggedInUser} />} />
-          <Route path="/profile" element={<Profile/>}/>
+          <Route
+            path="/login"
+            element={<Login setLoggedInUser={setLoggedInUser} />}
+          />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/Smooth" element={<Smooth />} />
           <Route path="/Smooth" element={<Smooth />} />
           <Route path="/Smooth/:id" element={<Detail />} />
@@ -113,7 +127,10 @@ function App() {
           <Route path="/Yogurt/:id" element={<DetailYogurt />} />
           <Route path="/DrinksForEoss" element={<DrinksForEoss />} />
           <Route path="/DrinksForEoss/:id" element={<DetailDrinks />} />
-          <Route path="/Cart" element={<Cartiem loggedInUser={loggedInUser}/>} />
+          <Route
+            path="/Cart"
+            element={<Cartiem loggedInUser={loggedInUser} />}
+          />
         </Routes>
       </section>
       <footer className="slide-in">
@@ -123,4 +140,3 @@ function App() {
   );
 }
 export default App;
-

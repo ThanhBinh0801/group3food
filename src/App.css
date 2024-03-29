@@ -14,7 +14,8 @@
 .headercontact {
   display: flex;
   justify-content: center;
-  text-align: left;
+  /* text-align: left; */
+  border-right: 2px solid black;
 }
 .shopnamecontact {
   font-size: xx-large;
@@ -298,9 +299,8 @@ Link {
 .menuoffcanvas {
   text-decoration: none;
   color: black;
-
 }
-.menuoffcanvas:hover{
+.menuoffcanvas:hover {
   color: #ffb702;
   font-size: xx-large;
   transition: 0.5s !important ;
@@ -452,7 +452,7 @@ Link {
   transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển động */
 
   height: 10% !important;
-  width:60% !important;
+  width: 60% !important;
   text-align: center;
   border-radius: 1px !important;
 }
@@ -478,4 +478,3 @@ Link {
 .chinhmauchomenu {
   background-color: rgb(246, 217, 153);
 }
-
